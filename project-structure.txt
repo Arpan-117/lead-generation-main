@@ -1,0 +1,42 @@
+b2b-lead-generation/
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+├── .gitignore
+├── public/
+│   └── favicon.svg
+└── src/
+    ├── main.jsx
+    ├── App.jsx
+    ├── router.jsx
+    ├── styles/
+    │   └── globals.css
+    ├── lib/
+    │   └── cn.js
+    ├── atoms/
+    │   ├── Button.jsx
+    │   ├── FormField.jsx
+    │   ├── GlobeArt.jsx
+    │   └── Typography.jsx
+    ├── molecules/
+    │   ├── MarketCard.jsx
+    │   ├── NavLinks.jsx
+    │   ├── Pillar.jsx
+    │   ├── StatBlock.jsx
+    │   └── ValueItem.jsx
+    ├── organisms/
+    │   ├── About.jsx
+    │   ├── Contact.jsx
+    │   ├── Footer.jsx
+    │   ├── Hero.jsx
+    │   ├── Markets.jsx
+    │   ├── Marquee.jsx
+    │   ├── Nav.jsx
+    │   ├── Vision.jsx
+    │   └── Why.jsx
+    ├── templates/
+    │   └── HomeTemplate.jsx
+    └── pages/
+        └── HomePage.jsx
