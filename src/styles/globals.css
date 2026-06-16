@@ -19,7 +19,7 @@
 
   /* Typography */
   .atom-eyebrow {
-    @apply font-sans text-[10px] font-light tracking-[5px] text-gold uppercase
+    @apply font-sans text-[12px] font-semibold tracking-[5px] text-gold uppercase
            flex items-center gap-4;
   }
   .atom-eyebrow::before {
@@ -28,7 +28,7 @@
   }
 
   .atom-section-label {
-    @apply font-sans text-[10px] font-light tracking-[5px] text-gold uppercase
+    @apply font-sans text-[12px] font-semibold tracking-[5px] text-gold uppercase
            flex items-center gap-4 mb-6;
   }
   .atom-section-label::before {
@@ -52,7 +52,7 @@
   .atom-heading em { font-style: italic !important; @apply text-gold; }
 
   .atom-body {
-    @apply font-serif text-[17px] font-light leading-[1.9] text-muted;
+    @apply font-serif text-[17px] font-normal leading-[1.9] text-navy-mid;
   }
 
   .atom-stat-number {
@@ -70,7 +70,7 @@
     @apply font-sans text-[11px] font-normal tracking-[3px] text-gold uppercase mb-3;
   }
   .atom-pillar-desc {
-    @apply font-serif text-[15px] font-light text-muted leading-[1.7];
+    @apply font-serif text-[15px] text-navy-mid leading-[1.7];
   }
 
   /* Buttons */
@@ -110,10 +110,10 @@
   .mol-nav-logo {
     @apply font-sans text-[13px] font-light tracking-[4px] text-gold no-underline;
   }
-  .mol-nav-logo span { @apply text-navy; }
+  .mol-nav-logo span { @apply text-cream; }
 
   .mol-nav-link {
-    @apply font-sans text-[10px] font-light tracking-[3px] text-muted
+    @apply font-sans text-[10px] font-light tracking-[3px] text-cream/60
            no-underline uppercase transition-colors duration-300 hover:text-gold;
   }
   .mol-nav-cta {
@@ -128,7 +128,7 @@
            bg-transparent border-0 cursor-pointer p-0 md:hidden;
   }
   .mol-hamburger span {
-    @apply block h-px w-full bg-navy transition-all duration-300 origin-center;
+    @apply block h-px w-full bg-cream transition-all duration-300 origin-center;
   }
   .mol-hamburger.open span:nth-child(1) { @apply rotate-45 translate-y-[6px]; }
   .mol-hamburger.open span:nth-child(2) { @apply opacity-0 scale-x-0; }
@@ -139,7 +139,7 @@
     @apply font-sans text-[10px] font-semibold tracking-[3px] text-gold uppercase mb-1;
   }
   .mol-value-desc {
-    @apply font-serif text-sm font-light text-muted leading-[1.5];
+    @apply font-serif text-sm font-light text-navy-mid leading-[1.5];
   }
 
   /* Market card */
@@ -156,7 +156,7 @@
   .mol-market-flag  { @apply text-[36px] md:text-[40px] mb-5 block; }
   .mol-market-region { @apply font-sans text-[11px] font-light tracking-[4px] text-gold uppercase mb-3; }
   .mol-market-title { @apply font-serif text-[24px] md:text-[28px] font-light text-navy mb-4 leading-[1.2]; }
-  .mol-market-desc  { @apply font-serif text-[15px] font-light text-muted leading-[1.7]; }
+  .mol-market-desc  { @apply font-serif text-[15px] text-navy-mid leading-[1.7]; }
 
   /* Service Card molecule */
   .mol-service-card {
@@ -173,7 +173,7 @@
   .mol-service-card__body  { @apply atom-body mb-5; }
   .mol-service-card__list  { @apply flex flex-col gap-2 mb-5; }
   .mol-service-card__item  {
-    @apply font-serif text-[15px] font-light text-muted leading-[1.6]
+    @apply font-serif text-[15px] text-navy-mid leading-[1.6]
            flex gap-3 items-baseline;
   }
   .mol-service-card__item::before {
@@ -196,7 +196,7 @@
     @apply font-sans text-[11px] font-normal tracking-[3px] text-gold uppercase;
   }
   .mol-reason-item__desc {
-    @apply font-serif text-[15px] font-light text-muted leading-[1.7];
+    @apply font-serif text-[15px] text-navy-mid leading-[1.7];
   }
 
   /* Contact details */
@@ -217,7 +217,7 @@
     @apply fixed top-0 left-0 right-0 z-50
            flex items-center justify-between
            px-5 md:px-16 py-5 md:py-6
-           bg-cream/95 backdrop-blur-md
+           bg-navy backdrop-blur-md
            border-b border-gold/20
            transition-[padding] duration-300;
   }
@@ -225,7 +225,7 @@
   .org-nav__links   { @apply hidden md:flex gap-10 list-none; }
 
   .org-nav__mobile-menu {
-    @apply md:hidden fixed inset-0 top-[64px] bg-cream z-40
+    @apply md:hidden fixed inset-0 top-[64px] bg-navy z-40
            flex flex-col items-center justify-center gap-10
            opacity-0 pointer-events-none transition-opacity duration-300;
   }
