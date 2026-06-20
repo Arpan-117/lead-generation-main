@@ -63,11 +63,11 @@
   }
 
   .atom-pillar-number {
-    @apply font-serif text-[40px] md:text-[48px] font-light leading-none mb-4;
-    color: rgba(184,146,46,0.25);
+    @apply font-serif text-[40px] md:text-[48px] font-light text-gold/60 leading-none mb-4;
+    /* color: rgba(184,146,46,0.25); */
   }
   .atom-pillar-name {
-    @apply font-sans text-[11px] font-normal tracking-[3px] text-gold uppercase mb-3;
+    @apply font-sans text-[12px] font-normal tracking-[3px] text-gold uppercase mb-3;
   }
   .atom-pillar-desc {
     @apply font-serif text-[15px] text-navy-mid leading-[1.7];
@@ -75,13 +75,13 @@
 
   /* Buttons */
   .atom-btn-primary {
-    @apply font-sans text-[11px] font-light tracking-[3px] uppercase
+    @apply font-sans text-[11px] tracking-[3px] uppercase
            bg-gold text-cream px-8 py-4 inline-block
            transition-all duration-300 hover:bg-gold-light hover:-translate-y-px
            active:translate-y-0 cursor-pointer border-0 no-underline;
   }
   .atom-btn-ghost {
-    @apply font-sans text-[11px] font-light tracking-[3px] uppercase
+    @apply font-sans text-[11px] tracking-[3px] uppercase
            text-gold flex items-center gap-2
            transition-all duration-300 hover:gap-4
            bg-transparent border-0 cursor-pointer no-underline;
@@ -99,7 +99,7 @@
     @apply atom-input resize-y min-h-[120px];
   }
   .atom-form-label {
-    @apply font-sans text-[10px] font-light tracking-[3px] text-gold uppercase;
+    @apply font-sans text-[10px] tracking-[3px] text-gold uppercase;
   }
 
   /* ─────────────────────────────────────────────────────────────────────────
@@ -113,7 +113,7 @@
   .mol-nav-logo span { @apply text-cream; }
 
   .mol-nav-link {
-    @apply font-sans text-[10px] font-light tracking-[3px] text-cream/60
+    @apply font-sans text-[10px] font-medium tracking-[3px] text-cream/60
            no-underline uppercase transition-colors duration-300 hover:text-gold;
   }
   .mol-nav-cta {
@@ -154,7 +154,7 @@
   }
   .mol-market-card:hover::after { @apply scale-x-100; }
   .mol-market-flag  { @apply text-[36px] md:text-[40px] mb-5 block; }
-  .mol-market-region { @apply font-sans text-[11px] font-light tracking-[4px] text-gold uppercase mb-3; }
+  .mol-market-region { @apply font-sans text-[12px]  tracking-[4px] text-gold uppercase mb-3; }
   .mol-market-title { @apply font-serif text-[24px] md:text-[28px] font-light text-navy mb-4 leading-[1.2]; }
   .mol-market-desc  { @apply font-serif text-[15px] text-navy-mid leading-[1.7]; }
 
@@ -165,7 +165,7 @@
            transition-all duration-300;
   }
   .mol-service-card__subtitle {
-    @apply font-sans text-[10px] font-light tracking-[4px] text-gold uppercase mb-3;
+    @apply font-sans text-[12px] tracking-[4px] text-gold uppercase mb-3;
   }
   .mol-service-card__title {
     @apply font-serif text-[22px] md:text-[26px] font-light text-navy leading-[1.2] mb-5;
@@ -193,7 +193,7 @@
     @apply bg-cream p-7 md:p-8 flex flex-col gap-3;
   }
   .mol-reason-item__name {
-    @apply font-sans text-[11px] font-normal tracking-[3px] text-gold uppercase;
+    @apply font-sans text-[12px] font-normal tracking-[3px] text-gold uppercase;
   }
   .mol-reason-item__desc {
     @apply font-serif text-[15px] text-navy-mid leading-[1.7];
@@ -201,7 +201,7 @@
 
   /* Contact details */
   .mol-contact-key {
-    @apply font-sans text-[10px] font-light tracking-[3px] text-gold uppercase min-w-[80px] flex-shrink-0;
+    @apply font-sans text-[10px] tracking-[3px] text-gold uppercase min-w-[80px] flex-shrink-0;
   }
   .mol-contact-val {
     @apply font-serif text-base font-light text-navy;
@@ -264,7 +264,7 @@
   }
 
   /* Marquee */
-  .org-marquee        { @apply bg-gold py-3 overflow-hidden; }
+  .org-marquee        { @apply bg-navy-light py-3 overflow-hidden; }
   .org-marquee__track { @apply flex whitespace-nowrap animate-marquee; }
   .org-marquee__item  { @apply font-sans text-[10px] font-light tracking-[4px] uppercase text-cream px-3; }
   .org-marquee__dot   { @apply opacity-50; }
@@ -337,7 +337,7 @@
     font-size: clamp(22px, 3.5vw, 48px);
   }
   .org-vision__attr {
-    @apply font-sans text-[10px] font-light tracking-[4px] text-gold uppercase relative z-10;
+    @apply font-sans text-[10px] font-semibold tracking-[4px] text-gold uppercase relative z-10;
   }
 
   /* Contact */
