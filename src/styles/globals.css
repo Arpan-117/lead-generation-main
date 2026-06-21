@@ -208,6 +208,101 @@
   }
   .mol-form-group { @apply flex flex-col gap-2; }
 
+  /* Product Card molecule */
+  .mol-product-card {
+    @apply bg-cream-mid border border-gold/15 flex flex-col
+           transition-all duration-300 hover:border-gold/40;
+  }
+  .mol-product-card__icon {
+    @apply w-full px-8 pt-10 pb-6
+           border-b border-gold/15
+           flex items-center gap-4;
+  }
+  .mol-product-card__icon-symbol {
+    @apply font-serif text-[40px] font-light text-gold leading-none;
+  }
+  .mol-product-card__category {
+    @apply font-sans text-[10px] font-normal tracking-[4px] text-gold uppercase;
+  }
+  .mol-product-card__body { @apply px-8 py-6 flex flex-col flex-1; }
+  .mol-product-card__desc {
+    @apply font-serif text-[15px] font-light text-navy leading-[1.7] mb-6;
+  }
+  .mol-product-card__section-label {
+    @apply font-sans text-[10px] font-normal tracking-[3px] text-gold uppercase mb-3;
+  }
+  .mol-product-card__list { @apply flex flex-col gap-1.5 mb-6; }
+  .mol-product-card__list-item {
+    @apply font-serif text-[14px] font-light text-navy leading-[1.5]
+           flex gap-2 items-baseline;
+  }
+  .mol-product-card__list-item::before {
+    content: '—';
+    @apply text-gold flex-shrink-0 text-[11px];
+  }
+  .mol-product-card__specs {
+    @apply bg-cream border border-gold/15 p-4 mb-6 flex flex-col gap-1.5;
+  }
+  .mol-product-card__spec-item {
+    @apply font-serif text-[13px] font-light text-navy leading-[1.5];
+  }
+  .mol-product-card__spec-item strong {
+    @apply font-sans text-[10px] font-normal tracking-[2px] text-gold uppercase
+           mr-2 not-italic;
+  }
+  .mol-product-card__ideal {
+    @apply font-serif text-[13px] font-light text-muted italic leading-[1.6] mb-6;
+  }
+  .mol-product-card__footer {
+    @apply mt-auto px-8 pb-8;
+  }
+  .mol-product-card__cta {
+    @apply atom-btn-primary w-full text-center justify-center;
+  }
+
+  /* Industry Card molecule */
+  .mol-industry-card {
+    @apply flex items-center gap-3
+           bg-cream border border-gold/15
+           rounded-md px-5 py-4
+           transition-all duration-300
+           hover:border-gold/50 hover:bg-cream-dark
+           cursor-default;
+  }
+  .mol-industry-card__dot {
+    @apply w-2 h-2 rounded-full bg-gold flex-shrink-0;
+    opacity: 0.85;
+  }
+  .mol-industry-card__name {
+    @apply font-sans text-[12px] font-normal tracking-[0.5px]
+           text-navy leading-[1.4];
+  }
+
+   /* Footer */
+   /* Col headings */
+  .mol-footer-heading {
+    @apply font-sans text-[10px] font-normal tracking-[4px]
+           text-gold uppercase mb-5;
+  }
+ 
+  /* Footer links */
+  .mol-footer-links { @apply flex flex-col gap-2.5 list-none; }
+  .mol-footer-link {
+    @apply font-sans text-[11px] font-light tracking-[2px]
+           no-underline transition-colors duration-300
+           hover:text-gold;
+    color: rgba(248,244,236,0.45);
+  }
+ 
+  /* Contact rows */
+  .mol-footer-contact-row {
+    @apply flex items-start gap-3 font-serif text-[13px] font-light;
+    color: rgba(248,244,236,0.45);
+  }
+  .mol-footer-contact-icon {
+    @apply mt-0.5 flex-shrink-0 text-gold;
+  }
+
   /* ─────────────────────────────────────────────────────────────────────────
      ORGANISMS
   ───────────────────────────────────────────────────────────────────────────*/
@@ -354,8 +449,80 @@
     @apply opacity-50 cursor-not-allowed hover:translate-y-0 hover:bg-gold;
   }
 
+  /* Products */
+  .org-products {
+    @apply px-5 md:px-16 py-20 md:py-32
+           bg-cream border-b border-gold/15;
+  }
+  .org-products__header { @apply mb-12 md:mb-16; }
+  .org-products__grid   {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+           gap-6 lg:gap-8;
+  }
+
+  /* Industries */
+  .org-industries {
+    @apply px-5 md:px-16 py-20 md:py-32
+           bg-cream-mid border-b border-gold/15;
+  }
+  .org-industries__header { @apply mb-10 md:mb-12; }
+  .org-industries__grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+           gap-2.5;
+  }
+
   /* Footer */
-  .org-footer {
+   .org-footer {
+    @apply bg-navy border-t border-gold/15;
+  }
+  .org-footer__inner {
+    @apply mx-auto w-full max-w-[1280px] px-5 md:px-16;
+  }
+  .org-footer__grid {
+    @apply grid gap-10 py-14
+           grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.4fr];
+  }
+ 
+  /* Col 1 — Brand */
+  .org-footer__brand-name {
+    @apply font-sans text-[18px] font-light tracking-[4px] text-gold
+           mb-4 inline-block no-underline
+           hover:opacity-90 transition-opacity duration-300;
+  }
+  .org-footer__brand-name span { @apply text-cream; }
+  .org-footer__tagline {
+    @apply font-serif text-[13px] font-light leading-relaxed
+           max-w-[220px];
+    color: rgba(248,244,236,0.4);
+  }
+  .org-footer__socials {
+    @apply mt-6 flex items-center gap-2;
+  }
+  .org-footer__social-btn {
+    @apply flex h-8 w-8 items-center justify-center
+           border border-white/10 rounded-full
+           transition-all duration-300
+           hover:border-gold hover:text-gold
+           no-underline;
+    color: rgba(248,244,236,0.35);
+  }
+
+  /* Bottom bar */
+  .org-footer__bottom {
+    @apply flex flex-col sm:flex-row items-center justify-between
+           gap-3 py-5 border-t;
+    border-color: rgba(248,244,236,0.06);
+  }
+  .org-footer__copyright {
+    @apply font-sans text-[10px] font-light tracking-[2px];
+    color: rgba(248,244,236,0.25);
+  }
+  .org-footer__sectors {
+    @apply font-sans text-[10px] font-light tracking-[2px];
+    color: rgba(248,244,236,0.2);
+  }
+
+  /* .org-footer {
     @apply bg-cream-mid border-t border-gold/20
            px-5 md:px-16 py-8
            flex flex-col sm:flex-row sm:justify-between sm:items-center
@@ -364,7 +531,7 @@
   .org-footer__brand   { @apply font-sans text-[12px] font-light tracking-[4px] text-gold; }
   .org-footer__brand span { @apply text-muted; }
   .org-footer__tagline { @apply font-serif italic text-sm text-muted tracking-wide; }
-  .org-footer__copy    { @apply font-sans text-[10px] font-light tracking-[2px]; color: rgba(90,110,135,0.55); }
+  .org-footer__copy    { @apply font-sans text-[10px] font-light tracking-[2px]; color: rgba(90,110,135,0.55); } */
 
   /* ─────────────────────────────────────────────────────────────────────────
      TEMPLATES

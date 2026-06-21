@@ -7,6 +7,8 @@ import { Why }           from '../organisms/Why';
 import { Vision }        from '../organisms/Vision';
 import { Contact }       from '../organisms/Contact';
 import { SourcingServices } from '../organisms/SourcingServices';
+import { Products } from '../organisms/Products';
+import { Industries } from '../organisms/Industries';
 
 /**
  * PAGE — HomePage
@@ -21,6 +23,8 @@ export function HomePage() {
       <Marquee />
       <About />
       <Markets />
+      <Industries />
+      <Products />
       <Why />
       <SourcingServices />
       <Vision />

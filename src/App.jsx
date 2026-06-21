@@ -1,4 +1,6 @@
-import { HomePage } from './pages/HomePage';
+import { RouterProvider } from 'react-router';
+import { router } from './router';
+// import { HomePage } from './pages/HomePage';
 
 /**
  * App root.
@@ -6,5 +8,5 @@ import { HomePage } from './pages/HomePage';
  * replace this with <RouterProvider router={router} />.
  */
 export default function App() {
-  return <HomePage />;
+  return <RouterProvider router={router} />;
 }
