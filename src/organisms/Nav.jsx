@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 import { NavLinks } from '../molecules/NavLinks';
 
 export function Nav() {
@@ -22,9 +23,14 @@ export function Nav() {
   return (
     <>
       <nav className={`org-nav ${scrolled ? 'scrolled' : ''}`}>
-        <a href="#hero" className="mol-nav-logo" onClick={closeMenu}>
+        {/* <a href="#hero" className="mol-nav-logo" onClick={closeMenu}>
           CGV
-        </a>
+        </a> */}
+        
+        {/* Replaced wih react router */}
+        <Link to="/" className="mol-nav-logo" onClick={closeMenu}>
+          CGV
+        </Link>
 
         {/* Desktop links */}
         <ul className="org-nav__links">
@@ -32,9 +38,14 @@ export function Nav() {
         </ul>
 
         {/* Desktop CTA */}
-        <a href="#contact" className="mol-nav-cta hidden md:inline-block">
+        {/* <a href="#contact" className="mol-nav-cta hidden md:inline-block">
           Begin Partnership
-        </a>
+        </a> */}
+
+        {/* Replaced with react router */}
+        <Link to="/#contact" className="mol-nav-cta hidden md:inline-block" onClick={closeMenu}>
+          Begin Partnership
+        </Link>
 
         {/* Hamburger (mobile only) */}
         <button
@@ -53,9 +64,14 @@ export function Nav() {
         <ul className="flex flex-col items-center gap-8 list-none">
           <NavLinks onLinkClick={closeMenu} />
         </ul>
-        <a href="#contact" className="mol-nav-cta mt-4" onClick={closeMenu}>
+        {/* <a href="#contact" className="mol-nav-cta mt-4" onClick={closeMenu}>
           Begin Partnership
-        </a>
+        </a> */}
+
+        {/* Replaced wih react router */}
+        <Link to="/#contact" className="mol-nav-cta mt-4" onClick={closeMenu}>
+          Begin Partnership
+        </Link>
       </div>
     </>
   );

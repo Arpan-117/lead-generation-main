@@ -1,5 +1,6 @@
 import { Nav }    from '../organisms/Nav';
 import { Footer } from '../organisms/Footer';
+import { useHashScroll } from '../hooks/useHashScroll';
 
 /**
  * TEMPLATE — HomeTemplate
@@ -7,6 +8,8 @@ import { Footer } from '../organisms/Footer';
  * All future pages (About page, Markets page, etc.) can reuse this template.
  */
 export function HomeTemplate({ children }) {
+  useHashScroll();
+  
   return (
     <div className="tmpl-page">
       <Nav />
