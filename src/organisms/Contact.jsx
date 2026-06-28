@@ -55,7 +55,7 @@ export function Contact() {
       </div>
 
       {/* Right — form */}
-      <div className="org-contact__form">
+      {/* <div className="org-contact__form">
         {submitted ? (
           <p className="org-contact__success">
             Thank you. We will be in touch shortly.
@@ -101,6 +101,11 @@ export function Contact() {
             </ButtonPrimary>
           </>
         )}
+      </div> */}
+
+      {/* Right — Google form */}
+      <div className='pt-4 px-4'>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfxV2Hb2NcBOiqV7fpQTECOICnrdbpNAWLpm_VplrisD9qPGw/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
       </div>
     </section>
   );
