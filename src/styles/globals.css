@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +9,7 @@
 ───────────────────────────────────────────────────────────────────────────── */
 @layer base {
   html { @apply scroll-smooth; }
-  body { @apply font-serif bg-cream text-navy overflow-x-hidden; }
+  body { @apply font-serif bg-cream text-muted overflow-x-hidden; }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -52,7 +52,7 @@
   .atom-heading em { font-style: italic !important; @apply text-gold; }
 
   .atom-body {
-    @apply font-serif text-[17px] font-normal leading-[1.9] text-navy-mid;
+    @apply font-content text-[17px] font-normal leading-[1.9] text-muted;
   }
 
   .atom-stat-number {
@@ -70,7 +70,7 @@
     @apply font-sans text-[12px] font-normal tracking-[3px] text-gold uppercase mb-3;
   }
   .atom-pillar-desc {
-    @apply font-serif text-[15px] text-navy-mid leading-[1.7];
+    @apply font-content text-[12px] text-muted italic leading-[1.7];
   }
 
   /* Buttons */
@@ -113,8 +113,8 @@
   .mol-nav-logo span { @apply text-cream; }
 
   .mol-nav-link {
-    @apply font-sans text-[10px] font-medium tracking-[3px] text-white
-           no-underline uppercase transition-colors duration-300 hover:text-gold-light;
+    @apply font-sans text-[15px] font-medium tracking-[3px] text-white
+           no-underline  transition-colors duration-300 hover:text-gold-light;
   }
   .mol-nav-link--active {
     @apply text-gold;
@@ -142,7 +142,7 @@
     @apply font-sans text-[10px] font-semibold tracking-[3px] text-gold uppercase mb-1;
   }
   .mol-value-desc {
-    @apply font-serif text-sm font-light text-navy-mid leading-[1.5];
+    @apply font-content text-sm  text-muted leading-[1.5];
   }
 
   /* Market card */
@@ -158,8 +158,8 @@
   .mol-market-card:hover::after { @apply scale-x-100; }
   .mol-market-flag  { @apply text-[36px] md:text-[40px] mb-5 block; }
   .mol-market-region { @apply font-sans text-[12px]  tracking-[4px] text-gold uppercase mb-3; }
-  .mol-market-title { @apply font-serif text-[24px] md:text-[28px] font-light text-navy mb-4 leading-[1.2]; }
-  .mol-market-desc  { @apply font-serif text-[15px] text-navy-mid leading-[1.7]; }
+  .mol-market-title { @apply font-serif text-[24px] md:text-[28px] font-medium text-navy mb-4 leading-[1.2]; }
+  .mol-market-desc  { @apply font-content text-[15px] text-muted leading-[1.7]; }
 
   /* Service Card molecule */
   .mol-service-card {
@@ -171,12 +171,12 @@
     @apply font-sans text-[12px] tracking-[4px] text-gold uppercase mb-3;
   }
   .mol-service-card__title {
-    @apply font-serif text-[22px] md:text-[26px] font-light text-navy leading-[1.2] mb-5;
+    @apply font-serif text-[22px] md:text-[26px] font-medium text-navy leading-[1.2] mb-5;
   }
   .mol-service-card__body  { @apply atom-body mb-5; }
   .mol-service-card__list  { @apply flex flex-col gap-2 mb-5; }
   .mol-service-card__item  {
-    @apply font-serif text-[15px] text-navy-mid leading-[1.6]
+    @apply font-content text-[15px] text-muted leading-[1.6]
            flex gap-3 items-baseline;
   }
   .mol-service-card__item::before {
@@ -199,15 +199,15 @@
     @apply font-sans text-[12px] font-normal tracking-[3px] text-gold uppercase;
   }
   .mol-reason-item__desc {
-    @apply font-serif text-[15px] text-navy-mid leading-[1.7];
+    @apply font-content text-[12px] text-muted leading-[1.7];
   }
 
   /* Contact details */
   .mol-contact-key {
-    @apply font-sans text-[10px] tracking-[3px] text-gold uppercase min-w-[80px] flex-shrink-0;
+    @apply font-sans text-[12px] tracking-[3px] text-gold uppercase min-w-[80px] flex-shrink-0;
   }
   .mol-contact-val {
-    @apply font-serif text-base font-light text-navy;
+    @apply font-content text-base font-light text-muted;
   }
   .mol-form-group { @apply flex flex-col gap-2; }
 
@@ -229,14 +229,14 @@
   }
   .mol-product-card__body { @apply px-8 py-6 flex flex-col flex-1; }
   .mol-product-card__desc {
-    @apply font-serif text-[15px] font-light text-navy leading-[1.7] mb-6;
+    @apply font-content text-[15px] font-light text-navy-light leading-[1.7] mb-6;
   }
   .mol-product-card__section-label {
-    @apply font-sans text-[10px] font-normal tracking-[3px] text-gold uppercase mb-3;
+    @apply font-sans text-[12px] font-normal tracking-[3px] text-gold uppercase mb-3;
   }
   .mol-product-card__list { @apply flex flex-col gap-1.5 mb-6; }
   .mol-product-card__list-item {
-    @apply font-serif text-[14px] font-light text-navy leading-[1.5]
+    @apply font-content text-[14px] font-light text-navy-light leading-[1.5]
            flex gap-2 items-baseline;
   }
   .mol-product-card__list-item::before {
@@ -247,14 +247,14 @@
     @apply bg-cream border border-gold/15 p-4 mb-6 flex flex-col gap-1.5;
   }
   .mol-product-card__spec-item {
-    @apply font-serif text-[13px] font-light text-navy leading-[1.5];
+    @apply font-content text-[10px] font-light text-navy leading-[1.5];
   }
   .mol-product-card__spec-item strong {
     @apply font-sans text-[10px] font-normal tracking-[2px] text-gold uppercase
            mr-2 not-italic;
   }
   .mol-product-card__ideal {
-    @apply font-serif text-[13px] font-light text-muted italic leading-[1.6] mb-6;
+    @apply font-content text-[13px] font-light text-muted italic leading-[1.6] mb-6;
   }
   .mol-product-card__footer {
     @apply mt-auto px-8 pb-8;
@@ -494,7 +494,7 @@
   }
   .org-footer__brand-name span { @apply text-cream; }
   .org-footer__tagline {
-    @apply font-serif text-[13px] font-light leading-relaxed
+    @apply font-content text-[13px] font-light leading-relaxed
            max-w-[220px];
     color: rgba(248,244,236,0.4);
   }
@@ -517,11 +517,11 @@
     border-color: rgba(248,244,236,0.06);
   }
   .org-footer__copyright {
-    @apply font-sans text-[10px] font-light tracking-[2px];
-    color: rgba(248,244,236,0.25);
+    @apply font-content text-[12px] font-semibold text-muted tracking-[2px];
+    /* color: rgba(248,244,236,0.25); */
   }
   .org-footer__sectors {
-    @apply font-sans text-[10px] font-light tracking-[2px];
+    @apply font-content text-[12px] font-semibold tracking-[2px];
     color: rgba(248,244,236,0.2);
   }
 

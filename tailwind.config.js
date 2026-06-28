@@ -27,6 +27,7 @@ module.exports = {
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         sans:  ['"Josefin Sans"', 'sans-serif'],
+        content: ['"Inter"', 'sans-serif']
       },
       fontSize: {
         'eyebrow': ['10px', { letterSpacing: '5px', lineHeight: '1' }],
