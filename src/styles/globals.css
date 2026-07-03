@@ -371,7 +371,7 @@
   .org-about {
     @apply grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24
            px-5 md:px-16 py-20 md:py-32
-           bg-white border-b border-gold/15;
+           bg-cream border-b border-gold/15;
   }
   .org-about__frame {
     @apply relative bg-cream-mid border border-gold/20 aspect-[4/5]
