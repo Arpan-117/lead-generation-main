@@ -15,7 +15,15 @@ import { Industries } from '../organisms/Industries';
  * Composes all homepage organisms inside the shared template.
  * When new pages are added (e.g. MarketsPage, AboutPage), follow this
  * same pattern: import HomeTemplate + the relevant organisms.
+ * About
+ * Markets
+ * Industries
+ * Products
+ * Sourcing Services
+ * Why CGV
+ * Contact
  */
+
 export function HomePage() {
   return (
     <HomeTemplate>
@@ -25,8 +33,8 @@ export function HomePage() {
       <Markets />
       <Industries />
       <Products />
-      <Why />
       <SourcingServices />
+      <Why />
       <Vision />
       <Contact />
     </HomeTemplate>

@@ -110,8 +110,14 @@
   .mol-nav-logo {
     @apply font-sans text-[13px] font-light tracking-[4px] text-gold no-underline;
   }
-  .mol-nav-logo span { @apply text-cream; }
-
+  /* .mol-nav-logo span { @apply text-cream; } */
+  .mol-nav-logo__img {
+    /* 2000×2000px source — constrain to nav height, preserve aspect ratio */
+    @apply h-10 md:h-12 w-auto object-contain;
+  }
+  .mol-nav-logo__img--mobile {
+    @apply h-14 w-auto object-contain mb-4;
+  }
   .mol-nav-link {
     @apply font-sans text-[15px] font-medium tracking-[3px] text-white
            no-underline  transition-colors duration-300 hover:text-gold-light;
@@ -310,22 +316,51 @@
      ORGANISMS
   ───────────────────────────────────────────────────────────────────────────*/
 
+  /* Top banner */
+  .org-topbar {
+    @apply fixed top-0 left-0 right-0 z-50
+           bg-white border-b border-gold/15
+           px-5 md:px-16 py-2
+           flex items-center justify-center md:justify-end
+           gap-6 md:gap-10;
+    height: 36px;
+  }
+  .org-topbar__item {
+    @apply flex items-center gap-2
+           font-sans text-base font-semibold text-navy tracking-[2px]
+           no-underline transition-colors duration-300;
+    /* color: rgba(248,244,236,0.55); */
+  }
+  .org-topbar__item:hover { @apply text-gold; }
+  .org-topbar__icon { @apply text-gold flex-shrink-0; }
+
   /* Nav */
   .org-nav {
-    @apply fixed top-0 left-0 right-0 z-50
+    /* @apply fixed top-0 left-0 right-0 z-50
+           flex items-center justify-between
+           px-5 md:px-16 py-5 md:py-6
+           bg-navy backdrop-blur-md
+           border-b border-gold/20
+           transition-[padding] duration-300; */
+    @apply fixed left-0 right-0 z-40
            flex items-center justify-between
            px-5 md:px-16 py-5 md:py-6
            bg-navy backdrop-blur-md
            border-b border-gold/20
            transition-[padding] duration-300;
+    top: 36px;
   }
   .org-nav.scrolled { @apply py-3 md:py-4; }
   .org-nav__links   { @apply hidden md:flex gap-10 list-none; }
 
   .org-nav__mobile-menu {
-    @apply md:hidden fixed inset-0 top-[64px] bg-navy z-40
+    /* @apply md:hidden fixed inset-0 top-[64px] bg-navy z-40
+           flex flex-col items-center justify-center gap-10
+           opacity-0 pointer-events-none transition-opacity duration-300; */
+    @apply md:hidden fixed inset-0 bg-cream z-30
            flex flex-col items-center justify-center gap-10
            opacity-0 pointer-events-none transition-opacity duration-300;
+    top: 108px; /* 36px topbar + ~72px nav */
   }
   .org-nav__mobile-menu.open { @apply opacity-100 pointer-events-auto; }
   .org-nav__mobile-menu .mol-nav-link { @apply text-base tracking-[4px]; }
@@ -371,7 +406,7 @@
   .org-about {
     @apply grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24
            px-5 md:px-16 py-20 md:py-32
-           bg-cream border-b border-gold/15;
+           bg-white border-b border-gold/15;
   }
   .org-about__frame {
     @apply relative bg-cream-mid border border-gold/20 aspect-[4/5]
@@ -492,6 +527,9 @@
            mb-4 inline-block no-underline
            hover:opacity-90 transition-opacity duration-300;
   }
+  .org-footer__logo {
+    @apply h-12 w-auto object-contain;
+  }
   .org-footer__brand-name span { @apply text-cream; }
   .org-footer__tagline {
     @apply font-content text-[13px] font-light leading-relaxed
@@ -540,7 +578,10 @@
      TEMPLATES
   ───────────────────────────────────────────────────────────────────────────*/
   .tmpl-page { @apply flex flex-col min-h-screen; }
-  .tmpl-main { @apply flex-1 pt-[64px]; }
+  .tmpl-main {
+     /* @apply flex-1 pt-[64px];  */
+     @apply flex-1 pt-[108px]; /* 36px topbar + 72px nav */
+    }
 }
 
  /* org-hero - bg-cream */

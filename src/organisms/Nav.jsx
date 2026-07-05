@@ -1,6 +1,20 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import { Mail, Phone } from 'lucide-react';
 import { NavLinks } from '../molecules/NavLinks';
+
+const CONTACT_INFO = [
+  {
+    icon: <Phone size={16} strokeWidth={4} />,
+    label: '+91 00000 00000',
+    href:  'tel:+910000000000',
+  },
+  {
+    icon: <Mail size={16} strokeWidth={4} />,
+    label: 'contact@chowdhuryglovalventures.com',
+    href:  'mailto:contact@chowdhuryglovalventures.com',
+  },
+];
 
 export function Nav() {
   const [scrolled, setScrolled]   = useState(false);
@@ -22,6 +36,18 @@ export function Nav() {
 
   return (
     <>
+
+      {/* Top Banner */}
+      <div className="org-topbar">
+        {CONTACT_INFO.map(({ icon, label, href }) => (
+          <a key={href} href={href} className="org-topbar__item">
+            <span className="org-topbar__icon">{icon}</span>
+            {label}
+          </a>
+        ))}
+      </div>
+
+      {/* Main Navbar */}
       <nav className={`org-nav ${scrolled ? 'scrolled' : ''}`}>
         {/* <a href="#hero" className="mol-nav-logo" onClick={closeMenu}>
           CGV
@@ -29,7 +55,11 @@ export function Nav() {
         
         {/* Replaced wih react router */}
         <Link to="/" className="mol-nav-logo" onClick={closeMenu}>
-          CGV
+          <img
+            src="/Logo.png"
+            alt="Chowdhury Global Ventures"
+            className="mol-nav-logo__img"
+          />
         </Link>
 
         {/* Desktop links */}

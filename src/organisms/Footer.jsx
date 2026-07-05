@@ -96,7 +96,12 @@ export function Footer() {
           {/* Col 1 — Brand */}
           <div>
             <Link to="/" className="org-footer__brand-name">
-              CGV <span>· Chowdhury Global Ventures</span>
+              {/* CGV <span>· Chowdhury Global Ventures</span> */}
+              <img
+                src="/Logo.png"
+                alt="Chowdhury Global Ventures"
+                className="org-footer__logo"
+              />
             </Link>
             <p className="org-footer__tagline">
               An Indian-founded trading enterprise connecting markets across
