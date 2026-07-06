@@ -26,7 +26,7 @@ export function Industries() {
         <SectionHeading>
           Powering diverse sectors<br /><em>across the globe.</em>
         </SectionHeading>
-        <BodyText className="mt-4 max-w-2xl">
+        <BodyText className="mt-4 ">
           Our products are trusted by businesses operating in some of the most
           demanding industrial, infrastructure, and commercial environments worldwide.
         </BodyText>

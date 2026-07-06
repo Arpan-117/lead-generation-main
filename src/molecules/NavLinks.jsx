@@ -10,7 +10,7 @@ const LINKS = [
   { href: '/#about', label: 'About' },
   { href: '/#markets', label: 'Markets' },
   { href: '/#industries', label: 'Industries' },   // Build and map
-  { href: '/#products', label: 'Products' },     // Build and map
+  // { href: '/#products', label: 'Products' },     // Build and map
   { href: '/#sourcing', label: 'Sourcing Services' },
   { href: '/#why', label: 'Why CGV' },
   { href: '/#contact', label: 'Contact' },

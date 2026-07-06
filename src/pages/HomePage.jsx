@@ -32,7 +32,7 @@ export function HomePage() {
       <About />
       <Markets />
       <Industries />
-      <Products />
+      {/* <Products /> */}
       <SourcingServices />
       <Why />
       <Vision />
