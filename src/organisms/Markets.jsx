@@ -3,22 +3,22 @@ import { MarketCard } from '../molecules/MarketCard';
 
 const MARKETS = [
   {
-    flag:   '🇮🇳',
-    region: 'Domestic',
-    title:  'India',
-    desc:   "Our home market and operational base. We leverage deep local knowledge and relationships to source, procure, and distribute across India's diverse and growing economy.",
-  },
-  {
-    flag:   '🌙',
-    region: 'International',
-    title:  'Middle East',
-    desc:   'A critical trade corridor between Asia and the world. We facilitate import-export partnerships across the Gulf, building long-term relationships grounded in mutual value.',
-  },
-  {
     flag:   '🌍',
-    region: 'Emerging',
-    title:  'Africa',
-    desc:   "The world's next great economic frontier. We are establishing early footholds across key African markets, positioning CGV as a trusted partner for the continent's growth decade.",
+    region: 'Global',
+    title:  '1',
+    desc:   "Serving customers across every major international market with dependable sourcing and supply chain solutions.",
+  },
+  {
+    flag:   '🤝',
+    region: 'Worldwide Partnerships',
+    title:  '2',
+    desc:   'Collaborating with trusted manufacturers, suppliers, and logistics partners to ensure quality, reliability, and competitive pricing.',
+  },
+  {
+    flag:   '🚢',
+    region: 'Cross-Border Trade',
+    title:  '3',
+    desc:   "Supporting seamless import, export, procurement, and international logistics for businesses around the world.",
   },
 ];
 
@@ -29,7 +29,7 @@ export function Markets() {
         <div>
           <SectionLabel>Our Reach</SectionLabel>
           <SectionHeading>
-            Three markets.<br /><em>One standard.</em>
+            Global Markets.<br /><em>Trusted Partnerships.</em>
           </SectionHeading>
         </div>
       </div>
@@ -37,7 +37,7 @@ export function Markets() {
       <div className="org-markets__grid">
         {MARKETS.map((m) => (
           <MarketCard
-            key={m.title}
+            key={m.region}
             flag={m.flag}
             region={m.region}
             title={m.title}

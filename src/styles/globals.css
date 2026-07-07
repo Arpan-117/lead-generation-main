@@ -287,7 +287,82 @@
   }
 
   /* Industry Card molecule */
+  /* Industry hover card - always visible content */
   .mol-industry-card {
+    @apply relative overflow-hidden flex flex-col
+           border border-gold/20 rounded-xl
+           bg-cream p-7 md:p-8
+           transition-all duration-300;
+  }
+  .mol-industry-card:hover {
+    @apply bg-navy border-gold;
+  }
+  /* Gold sweep underline */
+  .mol-industry-card::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-0.5 bg-gold
+           scale-x-0 origin-left transition-transform duration-500;
+  }
+  .mol-industry-card:hover::after {
+    @apply scale-x-100;
+  }
+
+  /* Icon — sits at top, shifts up on hover */
+  .mol-industry-card__icon {
+    @apply text-[34px] leading-none mb-5 block flex-shrink-0;
+  }
+  /* .mol-industry-card:hover .mol-industry-card__icon {
+    @apply -translate-y-2 opacity-80;
+  } */
+
+  /* Content block — title + desc move together as a unit */
+  /* .mol-industry-card__body {
+    @apply relative z-10 flex flex-col gap-0
+           transition-transform duration-300;
+  } */
+  /* .mol-industry-card:hover .mol-industry-card__body {
+    @apply -translate-y-3;
+  } */
+
+  .mol-industry-card__title {
+    @apply font-sans text-[14px] font-normal tracking-[3px]
+           text-gold uppercase mb-3
+           transition-colors duration-300;
+  }
+  .mol-industry-card:hover .mol-industry-card__title {
+    @apply text-gold-light;
+  }
+
+  /* Description — hidden by default, fades in on hover */
+  .mol-industry-card__desc {
+    @apply font-content text-[14px] font-normal text-navy leading-[1.7] mb-4
+           transition-colors duration-300;
+  }
+  .mol-industry-card:hover .mol-industry-card__desc {
+    @apply text-white
+    /* color: rgba(248,244,236,0.7); */
+  }
+  /* .mol-industry-card:hover .mol-industry-card__desc {
+    @apply max-h-[120px] opacity-100 mt-3;
+  } */
+
+  /* Solutions label */
+  .mol-industry-card__solutions-label {
+    @apply font-sans text-[12px] font-normal tracking-[3px]
+           text-gold uppercase mb-1.5;
+  }
+
+  /* Solutions text */
+  .mol-industry-card__solutions {
+    @apply font-content text-[13px] font-light text-muted italic leading-[1.6]
+           transition-colors duration-300 mt-auto;
+    /* color: rgba(10,22,40,0.6); */
+  }
+  .mol-industry-card:hover .mol-industry-card__solutions {
+    color: rgba(248,244,236,0.5);
+  }
+
+  /* .mol-industry-card {
     @apply flex items-center gap-3
            bg-cream border border-gold/15
            rounded-md px-5 py-4
@@ -302,7 +377,7 @@
   .mol-industry-card__name {
     @apply font-sans text-[12px] font-normal tracking-[0.5px]
            text-navy leading-[1.4];
-  }
+  } */
 
    /* Footer */
    /* Col headings */
@@ -590,8 +665,9 @@
   }
   .org-industries__header { @apply mb-10 md:mb-12; }
   .org-industries__grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-           gap-2.5;
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5;
+    /* @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+           gap-2.5; */
   }
 
   /* Footer */
