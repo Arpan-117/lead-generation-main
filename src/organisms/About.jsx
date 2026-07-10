@@ -31,14 +31,16 @@ export function About() {
           can build bridges between nations and create prosperity that lasts generations.
         </BodyText>
         <BodyText className="mb-4">
-          Chowdhury Global Ventures was founded on that belief. Rooted in India, reaching
+          {/* Chowdhury Global Ventures was founded on that belief. Rooted in India, reaching
           into the Middle East and Africa, we are a trading company built not just for
-          today's markets — but for the decades ahead.
+          today's markets — but for the decades ahead. */}
+          CGV is a one-stop global sourcing and trading partner, connecting businesses with trusted suppliers, quality products, and seamless procurement solutions across industries. Backed by a global network of manufacturers and logistics partners, we simplify international trade through reliable sourcing, competitive pricing, and dependable supply chain solutions.
         </BodyText>
         <BodyText>
-          The name Chowdhury carries weight. Leadership, responsibility, and respect —
+          {/* The name Chowdhury carries weight. Leadership, responsibility, and respect —
           values not merely inherited, but earned through every transaction, every
-          partnership, every promise kept.
+          partnership, every promise kept. */}
+          Driven by integrity, excellence, and long-term partnerships, we are committed to creating lasting value for our customers. More than a trading company, we are building a legacy—one that carries the Chowdhury name with pride through every transaction, every partnership, and every generation.
         </BodyText>
 
         <div className="org-about__values">

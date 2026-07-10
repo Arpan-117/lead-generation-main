@@ -3,11 +3,11 @@ import { Eyebrow, BodyText } from '../atoms/Typography';
 import { ButtonPrimary, ButtonGhost } from '../atoms/Button';
 import { StatBlock }     from '../molecules/StatBlock';
 
-const STATS = [
-  { number: '3',  label: 'Markets Served'        },
-  { number: '∞',  label: 'Year Legacy Vision'    },
-  { number: '1',  label: 'Uncompromising Standard' },
-];
+// const STATS = [
+//   { number: '3',  label: 'Markets Served'        },
+//   { number: '∞',  label: 'Year Legacy Vision'    },
+//   { number: '1',  label: 'Uncompromising Standard' },
+// ];
 
 export function Hero() {
   return (
@@ -28,8 +28,9 @@ export function Hero() {
         </h1>
 
         <BodyText className="org-hero__sub">
-          An Indian-founded trading enterprise connecting markets across South Asia,
-          the Middle East, and Africa — with integrity at every step.
+          {/* An Indian-founded trading enterprise connecting markets across South Asia,
+          the Middle East, and Africa — with integrity at every step. */}
+          A trusted global trading company specializing in international sourcing, procurement, import-export, wholesale supply, and end-to-end supply chain solutions, connecting businesses with quality products and reliable suppliers worldwide.
         </BodyText>
 
         <div className="org-hero__actions">
@@ -39,11 +40,11 @@ export function Hero() {
       </div>
 
       {/* Stats bar */}
-      <div className="org-hero__stats">
+      {/* <div className="org-hero__stats">
         {STATS.map((s) => (
           <StatBlock key={s.label} number={s.number} label={s.label} />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }

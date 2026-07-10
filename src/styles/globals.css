@@ -120,10 +120,10 @@
   }
   .mol-nav-link {
     @apply font-sans text-[15px] font-medium tracking-[3px] text-white
-           no-underline  transition-colors duration-300 hover:text-gold-light;
+           no-underline  transition-colors duration-300 hover:text-navy-light;
   }
   .mol-nav-link--active {
-    @apply text-gold;
+    @apply text-navy;
   }
   .mol-nav-cta {
     @apply font-sans text-[10px] font-light tracking-[3px] uppercase
@@ -455,7 +455,7 @@
     @apply fixed left-0 right-0 z-40
            flex items-center justify-between
            px-5 md:px-16 py-5 md:py-6
-           bg-navy backdrop-blur-md
+           bg-gold backdrop-blur-md
            border-b border-gold/20
            transition-[padding] duration-300;
     top: 36px;

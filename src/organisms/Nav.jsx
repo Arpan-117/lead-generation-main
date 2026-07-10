@@ -56,7 +56,7 @@ export function Nav() {
         {/* Replaced wih react router */}
         <Link to="/" className="mol-nav-logo" onClick={closeMenu}>
           <img
-            src="/Logo.png"
+            src="/Logo.PNG"
             alt="Chowdhury Global Ventures"
             className="mol-nav-logo__img"
           />

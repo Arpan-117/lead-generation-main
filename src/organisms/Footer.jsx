@@ -98,14 +98,15 @@ export function Footer() {
             <Link to="/" className="org-footer__brand-name">
               {/* CGV <span>· Chowdhury Global Ventures</span> */}
               <img
-                src="/Logo.png"
+                src="/Logo.PNG"
                 alt="Chowdhury Global Ventures"
                 className="org-footer__logo"
               />
             </Link>
             <p className="org-footer__tagline">
-              An Indian-founded trading enterprise connecting markets across
-              South Asia, the Middle East, and Africa.
+              {/* An Indian-founded trading enterprise connecting markets across
+              South Asia, the Middle East, and Africa. */}
+              A trusted global trading company specializing in international sourcing, procurement, import-export, wholesale supply, and end-to-end supply chain solutions, connecting businesses with quality products and reliable suppliers worldwide.
             </p>
             <div className="org-footer__socials" aria-label="Social media links">
               {SOCIAL_LINKS.map(({ label, href, icon }) => (

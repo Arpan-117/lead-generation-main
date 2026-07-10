@@ -6,7 +6,8 @@ import { FormField } from '../atoms/FormField';
 const DETAILS = [
   { key: 'Email',   val: 'contact@chowdhuryglovalventures.com' },
   { key: 'Based in', val: 'India' },
-  { key: 'Markets', val: 'India · Middle East · Africa' },
+  // { key: 'Markets', val: 'India · Middle East · Africa' },
+  { key: 'Headquarters', val: 'Jamshedpur, Jharkhand' },
 ];
 
 const EMPTY = { name: '', company: '', email: '', message: '' };
@@ -36,12 +37,20 @@ export function Contact() {
         <SectionLabel>Get In Touch</SectionLabel>
 
         <SectionHeading className="mb-6">
-          Begin a<br /><em>partnership.</em>
+          {/* Begin a<br /><em>partnership.</em> */}
+          Ready to Elevate Your Project?<br /><em>Let’s Connect!</em>
         </SectionHeading>
 
         <BodyText className="mb-8">
-          Whether you are a buyer, seller, or potential trade partner — we would welcome
-          a conversation. Every great partnership begins with a single introduction.
+          Whether you’re in the initial planning phase or looking to fine-tune existing details, our dedicated team is here to assist you. Simply complete the form to get in touch with us.
+        </BodyText>
+
+        <BodyText className="mb-8">
+          Let’s explore how we can collaborate to bring your project to new heights.
+        </BodyText>
+
+        <BodyText className="mb-8">
+          We look forward to the opportunity to contribute to the success of your project.
         </BodyText>
 
         <div className="flex flex-col gap-4">
