@@ -10,6 +10,7 @@ import { SourcingServices } from '../organisms/SourcingServices';
 import { Products } from '../organisms/Products';
 import { Industries } from '../organisms/Industries';
 import { TradeProcess } from '../organisms/TradeProcess';
+import { Mission } from '../organisms/Mission';
 
 /**
  * PAGE — HomePage
@@ -39,6 +40,7 @@ export function HomePage() {
       <TradeProcess />
       <Why />
       <Vision />
+      <Mission />
       <Contact />
     </HomeTemplate>
   );
