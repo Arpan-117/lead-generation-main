@@ -379,6 +379,24 @@
            text-navy leading-[1.4];
   } */
 
+  /* Trade Step molecule */
+  .mol-trade-step {
+    @apply grid gap-4 py-5 border-b border-gold/15;
+    grid-template-columns: 40px 1fr;
+  }
+  .mol-trade-step:last-child { @apply border-b-0; }
+
+  .mol-trade-step__num {
+    @apply font-serif text-[22px] font-light text-gold leading-none pt-0.5;
+  }
+  .mol-trade-step__title {
+    @apply font-sans text-[11px] font-normal tracking-[2px]
+           text-navy uppercase mb-2;
+  }
+  .mol-trade-step__desc {
+    @apply font-content text-[14px] font-light text-navy leading-[1.7];
+  }
+
    /* Footer */
    /* Col headings */
   .mol-footer-heading {
@@ -598,6 +616,38 @@
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 7px solid #B8922E;
+  }
+
+  /* TRADE PROCESS ORGANISM */
+  .org-trade {
+    @apply px-5 md:px-16 py-20 md:py-32
+           bg-cream border-b border-gold/15;
+  }
+  .org-trade__inner  { @apply max-w-6xl mx-auto; }
+  .org-trade__header { @apply mb-10 md:mb-12; }
+
+  /* Two-column layout: diagram left, steps right */
+  .org-trade__grid {
+    @apply grid grid-cols-1 lg:grid-cols-2
+           gap-10 lg:gap-16 items-center;
+  }
+
+  /* SVG diagram wrapper */
+  .org-trade__diagram {
+    @apply w-full max-w-[380px] mx-auto;
+  }
+
+  /* Steps list */
+  .org-trade__steps  { @apply flex flex-col; }
+
+  /* Glossary bar */
+  .org-trade__glossary {
+    @apply mt-6 pt-5 border-t border-gold/20
+           font-serif text-[13px] font-light text-muted leading-[1.8];
+  }
+  .org-trade__glossary strong {
+    @apply font-sans text-[10px] font-normal tracking-[2px]
+           text-navy uppercase not-italic;
   }
 
   /* Why */

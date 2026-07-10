@@ -9,6 +9,7 @@ import { Contact }       from '../organisms/Contact';
 import { SourcingServices } from '../organisms/SourcingServices';
 import { Products } from '../organisms/Products';
 import { Industries } from '../organisms/Industries';
+import { TradeProcess } from '../organisms/TradeProcess';
 
 /**
  * PAGE — HomePage
@@ -20,6 +21,7 @@ import { Industries } from '../organisms/Industries';
  * Industries
  * Products
  * Sourcing Services
+ * Trade Process
  * Why CGV
  * Contact
  */
@@ -34,6 +36,7 @@ export function HomePage() {
       <Industries />
       {/* <Products /> */}
       <SourcingServices />
+      <TradeProcess />
       <Why />
       <Vision />
       <Contact />
