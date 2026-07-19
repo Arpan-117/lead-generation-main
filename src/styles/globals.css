@@ -9,7 +9,7 @@
 ───────────────────────────────────────────────────────────────────────────── */
 @layer base {
   html { @apply scroll-smooth; }
-  body { @apply font-serif bg-cream text-muted overflow-x-hidden; }
+  body { @apply font-serif bg-navy text-navy overflow-x-hidden; }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -107,23 +107,26 @@
   ───────────────────────────────────────────────────────────────────────────*/
 
   /* Nav */
-  .mol-nav-logo {
+  /* Removed for new Capsule Navbar */
+  /* .mol-nav-logo {
     @apply font-sans text-[13px] font-light tracking-[4px] text-gold no-underline;
-  }
+  } */
   /* .mol-nav-logo span { @apply text-cream; } */
-  .mol-nav-logo__img {
-    /* 2000×2000px source — constrain to nav height, preserve aspect ratio */
+  /* Removed for new Capsule Navbar */
+  /* .mol-nav-logo__img {
+    2000×2000px source — constrain to nav height, preserve aspect ratio
     @apply h-10 md:h-12 w-auto object-contain;
-  }
-  .mol-nav-logo__img--mobile {
+  } */
+   /* Removed for new Capsule Navbar */
+  /* .mol-nav-logo__img--mobile {
     @apply h-14 w-auto object-contain mb-4;
-  }
+  } */
   .mol-nav-link {
-    @apply font-sans text-[15px] font-medium tracking-[3px] text-white
-           no-underline  transition-colors duration-300 hover:text-navy-light;
+    @apply font-sans text-[15px] font-medium tracking-[3px] text-navy
+           no-underline  transition-colors duration-300 hover:text-gold-light;
   }
   .mol-nav-link--active {
-    @apply text-navy;
+    @apply text-gold;
   }
   .mol-nav-cta {
     @apply font-sans text-[10px] font-light tracking-[3px] uppercase
@@ -427,31 +430,35 @@
   ───────────────────────────────────────────────────────────────────────────*/
 
   /* Top banner */
-  .org-topbar {
+  /* Removed for new Navbar */
+  /* .org-topbar {
     @apply fixed top-0 left-0 right-0 z-50
            bg-white border-b border-gold/15
            px-5 md:px-16 py-2
            flex items-center justify-center md:justify-end
            gap-6 md:gap-10;
     height: 36px;
-  }
-  .org-topbar__item {
+  } */
+   /* Removed for new Navbar */
+  /* .org-topbar__item {
     @apply flex items-center gap-2
            font-sans text-base font-semibold text-navy tracking-[2px]
            no-underline transition-colors duration-300;
-    /* color: rgba(248,244,236,0.55); */
-  }
-  .org-topbar__item:hover { @apply text-gold; }
-  .org-topbar__icon { @apply text-gold flex-shrink-0; }
+    color: rgba(248,244,236,0.55);
+  } */
+  /* Removed for new Navbar */
+  /* .org-topbar__item:hover { @apply text-gold; }
+  .org-topbar__icon { @apply text-gold flex-shrink-0; } */
 
   /* Nav */
-  .org-nav {
-    /* @apply fixed top-0 left-0 right-0 z-50
+  /* Removed for new capsule Navbar */
+  /* .org-nav {
+    @apply fixed top-0 left-0 right-0 z-50
            flex items-center justify-between
            px-5 md:px-16 py-5 md:py-6
            bg-navy backdrop-blur-md
            border-b border-gold/20
-           transition-[padding] duration-300; */
+           transition-[padding] duration-300;
     @apply fixed left-0 right-0 z-40
            flex items-center justify-between
            px-5 md:px-16 py-5 md:py-6
@@ -459,9 +466,11 @@
            border-b border-gold/20
            transition-[padding] duration-300;
     top: 36px;
-  }
-  .org-nav.scrolled { @apply py-3 md:py-4; }
-  .org-nav__links   { @apply hidden md:flex gap-10 list-none; }
+  } */
+   /* Removed for new capsule Navbar */
+  /* .org-nav.scrolled { @apply py-3 md:py-4; } */
+  /* Removed for new capsule Navbar */
+  /* .org-nav__links   { @apply hidden md:flex gap-10 list-none; } */
 
   .org-nav__mobile-menu {
     /* @apply md:hidden fixed inset-0 top-[64px] bg-navy z-40
@@ -475,11 +484,77 @@
   .org-nav__mobile-menu.open { @apply opacity-100 pointer-events-auto; }
   .org-nav__mobile-menu .mol-nav-link { @apply text-base tracking-[4px]; }
 
+  /* ── Capsule nav outer wrapper — page bg matches hero so capsule truly floats ── */
+  .org-nav-outer {
+    @apply fixed top-0 left-0 right-0 z-50
+           px-4 md:px-8 pt-3 bg-transparent;
+    /* background: #0D1F3C; */
+  }
+
+  /* ── The unified capsule pill ── */
+  .org-capsule {
+    @apply mx-auto overflow-hidden;
+    max-width: 1200px;
+    border-radius: 20px;
+    border: 0.5px solid rgba(184,146,46,0.3);
+  }
+
+  /* ── Top strip — dark navy, contact info ── */
+  .org-capsule__topbar {
+    @apply flex items-center justify-center md:justify-end
+           gap-6 md:gap-10 px-6 py-1.5 bg-navy-light;
+    /* background: #0A1628; */
+    border-radius: 20px 20px 0 0;
+  }
+  .org-capsule__contact {
+    @apply flex items-center gap-2 no-underline
+           font-sans text-[10px] font-light tracking-[2px]
+           transition-colors duration-300;
+    color: rgba(248,244,236,0.5);
+  }
+  .org-capsule__contact:hover { @apply text-gold; }
+  .org-capsule__contact-icon  { @apply text-gold flex-shrink-0; }
+
+  /* ── Bottom strip — warm cream, logo + links + CTA ── */
+  .org-capsule__nav {
+    @apply flex items-center justify-between gap-4
+           px-5 md:px-6 py-2.5;
+    background: #F0EAD8;
+  }
+
+  /* Logo */
+  .org-capsule__logo {
+    @apply flex items-center gap-3 no-underline flex-shrink-0;
+  }
+  .org-capsule__logo-img {
+    @apply h-10 md:h-11 w-auto object-contain;
+  }
+
+  /* Nav links on cream — dark text, gold on hover */
+  .org-capsule__links {
+    @apply hidden md:flex gap-6 lg:gap-8 list-none;
+  }
+
+  /* CTA button */
+  .org-capsule__cta {
+    @apply hidden md:inline-block no-underline
+           font-sans text-[10px] font-light tracking-[3px] uppercase
+           px-5 py-2.5 text-cream
+           transition-colors duration-300;
+    background: #B8922E;
+    border-radius: 10px;
+  }
+  .org-capsule__cta:hover { background: #C9A84C; }
+
   /* Hero */
   .org-hero {
     @apply relative min-h-screen flex items-center
-           px-5 md:px-16 pt-32 pb-36 md:pb-28
-           bg-white overflow-hidden;
+           px-5 md:px-16 
+           /* pt-32  */
+           pb-36 md:pb-28
+           bg-navy overflow-hidden;
+           /* Extra top padding accounts for capsule nav height (~108px) */
+            padding-top: 140px;
   }
   .org-hero__bg {
     @apply absolute inset-0 pointer-events-none;
@@ -496,8 +571,8 @@
   }
   .org-hero__content  { @apply relative z-10 max-w-xl lg:max-w-2xl; }
   .org-hero__eyebrow  { @apply atom-eyebrow mb-8 animate-fade-up-1; }
-  .org-hero__title    { @apply atom-display mb-4 animate-fade-up-2; }
-  .org-hero__sub      { @apply atom-body mb-10 max-w-md animate-fade-up-3; }
+  .org-hero__title    { @apply atom-display mb-4 animate-fade-up-2 text-cream; }
+  .org-hero__sub      { @apply atom-body mb-10 max-w-md animate-fade-up-3; color: rgba(248,244,236,0.55); }
   .org-hero__actions  { @apply flex flex-col sm:flex-row gap-4 sm:items-center animate-fade-up-4; }
   .org-hero__stats {
     @apply absolute bottom-6 left-5 right-5 md:left-16 md:right-16
@@ -791,7 +866,8 @@
   .tmpl-page { @apply flex flex-col min-h-screen; }
   .tmpl-main {
      /* @apply flex-1 pt-[64px];  */
-     @apply flex-1 pt-[108px]; /* 36px topbar + 72px nav */
+     /* @apply flex-1 pt-[108px]; 36px topbar + 72px nav */
+     @apply flex-1 pt-[108px];    /* Hero handles its own top padding; other pages add pt-[108px] */
     }
 }
 

@@ -22,16 +22,27 @@ export function Hero() {
           Chowdhury Global Ventures
         </Eyebrow>
 
-        <h1 className="atom-display org-hero__title mb-4 animate-fade-up-2">
+        {/* <h1 className="atom-display org-hero__title mb-4 animate-fade-up-2">
+          Trade built on<br />
+          <em>trust &amp; legacy.</em>
+        </h1> */}
+
+        {/* Title — org-hero__title overrides atom-display to cream on dark bg */}
+        <h1 className="org-hero__title mb-4 animate-fade-up-2">
           Trade built on<br />
           <em>trust &amp; legacy.</em>
         </h1>
 
-        <BodyText className="org-hero__sub">
+        {/* <BodyText className="org-hero__sub"> */}
           {/* An Indian-founded trading enterprise connecting markets across South Asia,
           the Middle East, and Africa — with integrity at every step. */}
+          {/* A trusted global trading company specializing in international sourcing, procurement, import-export, wholesale supply, and end-to-end supply chain solutions, connecting businesses with quality products and reliable suppliers worldwide.
+        </BodyText> */}
+
+        {/* Sub — org-hero__sub overrides atom-body colour for dark bg */}
+        <p className="org-hero__sub">
           A trusted global trading company specializing in international sourcing, procurement, import-export, wholesale supply, and end-to-end supply chain solutions, connecting businesses with quality products and reliable suppliers worldwide.
-        </BodyText>
+        </p>
 
         <div className="org-hero__actions">
           <ButtonPrimary href="#contact">Begin a Partnership</ButtonPrimary>
