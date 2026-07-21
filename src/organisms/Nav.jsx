@@ -31,6 +31,11 @@ const CONTACT = [
   },
 ];
 
+// Scroll threshold — trigger just before leaving the hero section
+const SCROLL_THRESHOLD = typeof window !== 'undefined'
+  ? window.innerHeight - 80
+  : 600;
+
 // Simple Navbar with Top Banner - commented
 // export function Nav() {
 //   const [scrolled, setScrolled]   = useState(false);
@@ -136,9 +141,34 @@ const CONTACT = [
  *
  * Floats over the dark navy hero via org-nav-outer background matching.
  * Mobile: hamburger replaces links, slide-down menu opens below capsule.
+ * 
+ * Two states driven by scroll position:
+ *
+ * AT TOP (hero visible):
+ *   Floating capsule pill — padded outer, rounded corners,
+ *   dark navy topbar strip (contact info) + cream nav strip (logo/links/CTA).
+ *
+ * SCROLLED (past hero):
+ *   Full-width sticky bar — no padding, square corners, topbar hidden,
+ *   cream background flush to viewport edges. Seamless CSS transition.
+ *
+ * Mobile (all sizes below md):
+ *   Hamburger menu always. No capsule behaviour.
+ *   Slide-down overlay on open.
+ *
+ * The .scrolled class on org-nav-outer drives all visual changes via CSS.
  */
 export function Nav() {
+  const [scrolled,  setScrolled]  = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    // Run once on mount in case page is loaded mid-scroll
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -150,20 +180,26 @@ export function Nav() {
   return (
     <>
       {/* Fixed outer wrapper — bg matches hero so capsule truly floats */}
-      <div className="org-nav-outer">
+      {/* <div className="org-nav-outer"> */}
+
+      {/* Fixed outer — .scrolled removes padding + makes full-width */}
+      <div className={`org-nav-outer ${scrolled ? 'scrolled' : ''}`}>
         <div className="org-capsule">
 
           {/* Top strip — dark navy, contact info */}
+          {/* Top strip — collapses to 0 height on scroll */}
           <div className="org-capsule__topbar">
             {CONTACT.map(({ icon, label, href }) => (
               <a key={href} href={href} className="org-capsule__contact">
                 <span className="org-capsule__contact-icon">{icon}</span>
-                {label}
+                {/* {label} */}
+                <span className="hidden sm:inline">{label}</span>
               </a>
             ))}
           </div>
 
           {/* Bottom strip — warm cream, logo + links + CTA */}
+          {/* Nav strip — always visible */}
           <div className="org-capsule__nav">
             <Link to="/" className="org-capsule__logo" onClick={closeMenu}>
               <img

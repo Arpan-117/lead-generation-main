@@ -128,11 +128,12 @@
   .mol-nav-link--active {
     @apply text-gold;
   }
-  .mol-nav-cta {
+  /* Removed for static + capsule navbar with responsive design */
+  /* .mol-nav-cta {
     @apply font-sans text-[10px] font-light tracking-[3px] uppercase
            bg-gold text-cream px-5 py-2.5 no-underline
            transition-colors duration-300 hover:bg-gold-light;
-  }
+  } */
 
   /* Hamburger */
   .mol-hamburger {
@@ -140,7 +141,9 @@
            bg-transparent border-0 cursor-pointer p-0 md:hidden;
   }
   .mol-hamburger span {
-    @apply block h-px w-full bg-cream transition-all duration-300 origin-center;
+    /* Commented for changes in static + capsule navbar with responsive design */
+    /* @apply block h-px w-full bg-cream transition-all duration-300 origin-center; */
+    @apply block h-px w-full bg-navy transition-all duration-300 origin-center;
   }
   .mol-hamburger.open span:nth-child(1) { @apply rotate-45 translate-y-[6px]; }
   .mol-hamburger.open span:nth-child(2) { @apply opacity-0 scale-x-0; }
@@ -450,7 +453,6 @@
   /* .org-topbar__item:hover { @apply text-gold; }
   .org-topbar__icon { @apply text-gold flex-shrink-0; } */
 
-  /* Nav */
   /* Removed for new capsule Navbar */
   /* .org-nav {
     @apply fixed top-0 left-0 right-0 z-50
@@ -472,6 +474,22 @@
   /* Removed for new capsule Navbar */
   /* .org-nav__links   { @apply hidden md:flex gap-10 list-none; } */
 
+  /* Nav - Floating capsule (at top) → sticky full-width (on scroll) */
+  /* Outer fixed wrapper */
+  .org-nav-outer {
+    @apply fixed top-0 left-0 right-0 z-50
+            /* Commented for static + capsule navbar with responsive design */
+           /* px-4 md:px-8 pt-3  */
+           bg-transparent;
+    padding: 12px 24px 0;
+    /* background: #0D1F3C; */
+  }
+  /* Scrolled: remove padding so capsule becomes flush full-width bar */
+  .org-nav-outer.scrolled {
+    padding: 0;
+  }
+
+  /* Mobile slide-down menu */
   .org-nav__mobile-menu {
     /* @apply md:hidden fixed inset-0 top-[64px] bg-navy z-40
            flex flex-col items-center justify-center gap-10
@@ -480,16 +498,10 @@
            flex flex-col items-center justify-center gap-10
            opacity-0 pointer-events-none transition-opacity duration-300;
     top: 108px; /* 36px topbar + ~72px nav */
+    bottom: 0;
   }
   .org-nav__mobile-menu.open { @apply opacity-100 pointer-events-auto; }
   .org-nav__mobile-menu .mol-nav-link { @apply text-base tracking-[4px]; }
-
-  /* ── Capsule nav outer wrapper — page bg matches hero so capsule truly floats ── */
-  .org-nav-outer {
-    @apply fixed top-0 left-0 right-0 z-50
-           px-4 md:px-8 pt-3 bg-transparent;
-    /* background: #0D1F3C; */
-  }
 
   /* ── The unified capsule pill ── */
   .org-capsule {
@@ -497,6 +509,17 @@
     max-width: 1200px;
     border-radius: 20px;
     border: 0.5px solid rgba(184,146,46,0.3);
+    box-shadow: 0 4px 24px rgba(10,22,40,0.18), 0 1px 4px rgba(10,22,40,0.1);
+  }
+
+  /* Scrolled: expand to full width, square corners, no shadow */
+  .org-nav-outer.scrolled .org-capsule {
+    max-width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    box-shadow: 0 2px 16px rgba(10,22,40,0.12);
   }
 
   /* ── Top strip — dark navy, contact info ── */
@@ -505,11 +528,24 @@
            gap-6 md:gap-10 px-6 py-1.5 bg-navy-light;
     /* background: #0A1628; */
     border-radius: 20px 20px 0 0;
+    max-height: 36px;
+    overflow: hidden;
+    opacity: 1;
+  }
+  /* Scrolled: hide topbar seamlessly */
+  .org-nav-outer.scrolled .org-capsule__topbar {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    border-radius: 0;
   }
   .org-capsule__contact {
     @apply flex items-center gap-2 no-underline
            font-sans text-[10px] font-light tracking-[2px]
-           transition-colors duration-300;
+           transition-colors duration-300 
+           /* Added for capsule + static navbar */
+           whitespace-nowrap;
     color: rgba(248,244,236,0.5);
   }
   .org-capsule__contact:hover { @apply text-gold; }
@@ -518,7 +554,17 @@
   /* ── Bottom strip — warm cream, logo + links + CTA ── */
   .org-capsule__nav {
     @apply flex items-center justify-between gap-4
-           px-5 md:px-6 py-2.5;
+           px-5 md:px-6 py-2.5
+           bg-cream
+           transition-all duration-500;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* Scrolled: slightly reduce vertical padding */
+  .org-nav-outer.scrolled .org-capsule__nav {
+    padding-top: 8px;
+    padding-bottom: 8px;
     background: #F0EAD8;
   }
 
@@ -527,7 +573,14 @@
     @apply flex items-center gap-3 no-underline flex-shrink-0;
   }
   .org-capsule__logo-img {
-    @apply h-10 md:h-11 w-auto object-contain;
+    @apply h-10 w-auto object-contain
+            /* Commented for static + capsule navbar with responsive design */
+            /* md:h-11 */
+            transition-all duration-500;
+  }
+
+  .org-nav-outer.scrolled .org-capsule__logo-img {
+    @apply h-9;
   }
 
   /* Nav links on cream — dark text, gold on hover */
@@ -545,6 +598,10 @@
     border-radius: 10px;
   }
   .org-capsule__cta:hover { background: #C9A84C; }
+  /* Scrolled: square the CTA button to match the bar */
+  .org-nav-outer.scrolled .org-capsule__cta {
+    border-radius: 6px;
+  }
 
   /* Hero */
   .org-hero {
