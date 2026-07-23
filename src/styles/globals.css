@@ -125,9 +125,9 @@
     @apply font-sans text-[15px] font-medium tracking-[3px] text-navy
            no-underline  transition-colors duration-300 hover:text-gold-light;
   }
-  .mol-nav-link--active {
-    @apply text-gold;
-  }
+  .mol-nav-link:hover   { @apply text-gold-light; }
+  .mol-nav-link--active { @apply text-gold; }
+
   /* Removed for static + capsule navbar with responsive design */
   /* .mol-nav-cta {
     @apply font-sans text-[10px] font-light tracking-[3px] uppercase
@@ -135,10 +135,10 @@
            transition-colors duration-300 hover:bg-gold-light;
   } */
 
-  /* Hamburger */
+  /* ── Hamburger — visible below lg ── */
   .mol-hamburger {
     @apply flex flex-col justify-center gap-[5px] w-8 h-8
-           bg-transparent border-0 cursor-pointer p-0 md:hidden;
+           bg-transparent border-0 cursor-pointer p-0 lg:hidden;
   }
   .mol-hamburger span {
     /* Commented for changes in static + capsule navbar with responsive design */
@@ -481,36 +481,86 @@
             /* Commented for static + capsule navbar with responsive design */
            /* px-4 md:px-8 pt-3  */
            bg-transparent;
-    padding: 12px 24px 0;
+    /* padding: 12px 24px 0; */   /* Commented for static responsive Navbar */
     /* background: #0D1F3C; */
+    padding: 0;
+    transition: padding 0.5s ease;
+  }
+  /* Desktop at top: add padding so capsule floats */
+  @media (min-width: 1024px) {
+    .org-nav-outer {
+      padding: 12px 24px 0;
+    }
+    /* Scrolled: remove padding so capsule becomes flush full-width bar */
+  .org-nav-outer.scrolled {
+    padding: 0;
+  }
   }
   /* Scrolled: remove padding so capsule becomes flush full-width bar */
   .org-nav-outer.scrolled {
     padding: 0;
   }
 
-  /* Mobile slide-down menu */
+  /* ── Capsule container ── */
+  .org-capsule {
+    @apply w-full overflow-hidden;
+    /* Mobile/tablet: no rounding, no shadow, no max-width constraint */
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    transition: max-width 0.5s ease, border-radius 0.5s ease,
+                border 0.5s ease, box-shadow 0.5s ease;
+  }
+  /* Desktop at top: becomes pill */
+  @media (min-width: 1024px) {
+    .org-capsule { @apply mx-auto;
+      max-width: 1250px;
+      /* max-width: 80%; */
+      /* margin: 0 auto; */
+      border-radius: 20px;
+      border: 0.5px solid rgba(184,146,46,0.3);
+      box-shadow: 0 4px 24px rgba(10,22,40,0.18), 0 1px 4px rgba(10,22,40,0.1);
+    }
+    /* Desktop scrolled: full-width flat bar */
+    .org-nav-outer.scrolled .org-capsule {
+      max-width: 100%;
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      box-shadow: 0 2px 16px rgba(10,22,40,0.12);
+    }
+  }
+
+  /* Mobile and tablet slide-down menu */
   .org-nav__mobile-menu {
     /* @apply md:hidden fixed inset-0 top-[64px] bg-navy z-40
            flex flex-col items-center justify-center gap-10
            opacity-0 pointer-events-none transition-opacity duration-300; */
-    @apply md:hidden fixed inset-0 bg-cream z-30
+    @apply lg:hidden
+           /* md:hidden     Commented for static responsive Navbar */
+           fixed w-screen h-screen
+           inset-0       /* Commented for static responsive Navbar */
+           /* left-0 right-0 */
+         bg-cream z-30
            flex flex-col items-center justify-center gap-10
            opacity-0 pointer-events-none transition-opacity duration-300;
-    top: 108px; /* 36px topbar + ~72px nav */
-    bottom: 0;
+    /* top: 108px; 36px topbar + ~72px nav     Commented for static responsive Navbar */
+    top: 62px;  /* height of flat nav strip on mobile */
+    /* bottom: 0; */
   }
   .org-nav__mobile-menu.open { @apply opacity-100 pointer-events-auto; }
   .org-nav__mobile-menu .mol-nav-link { @apply text-base tracking-[4px]; }
 
+  /* Commented for static responsive Navbar */
   /* ── The unified capsule pill ── */
-  .org-capsule {
+  /* .org-capsule {
     @apply mx-auto overflow-hidden;
     max-width: 1200px;
     border-radius: 20px;
     border: 0.5px solid rgba(184,146,46,0.3);
     box-shadow: 0 4px 24px rgba(10,22,40,0.18), 0 1px 4px rgba(10,22,40,0.1);
-  }
+  } */
 
   /* Scrolled: expand to full width, square corners, no shadow */
   .org-nav-outer.scrolled .org-capsule {
@@ -522,24 +572,59 @@
     box-shadow: 0 2px 16px rgba(10,22,40,0.12);
   }
 
+  /* Commented as replaced by media queries for static responsive Navbar */
   /* ── Top strip — dark navy, contact info ── */
-  .org-capsule__topbar {
+  /* .org-capsule__topbar {
     @apply flex items-center justify-center md:justify-end
            gap-6 md:gap-10 px-6 py-1.5 bg-navy-light;
-    /* background: #0A1628; */
+    background: #0A1628;
     border-radius: 20px 20px 0 0;
     max-height: 36px;
     overflow: hidden;
     opacity: 1;
+  } */
+  
+  /* ── Top strip — contact info ── */
+  .org-capsule__topbar {
+    /* Mobile: hidden entirely — too narrow */
+    @apply hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
   }
+  /* Desktop: show topbar */
+  /* ── Top strip — dark navy, contact info ── */
+  @media (min-width: 1024px) {
+    .org-capsule__topbar {
+      @apply flex items-center justify-end gap-10 
+             px-6 py-1.5 bg-navy-light;
+      /* display: flex; */
+      /* background: #0A1628; */
+      border-radius: 20px 20px 0 0;
+      /* padding-top: 6px;
+      padding-bottom: 6px; */
+      max-height: 36px;
+      overflow: hidden;
+      opacity: 1;
+    }
+    /* Desktop scrolled: collapse topbar */
+    .org-nav-outer.scrolled .org-capsule__topbar {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+      border-radius: 0;
+    }
+  }
+
+  /* Commented as replaced by media queries for static responsive Navbar */
   /* Scrolled: hide topbar seamlessly */
-  .org-nav-outer.scrolled .org-capsule__topbar {
+  /* .org-nav-outer.scrolled .org-capsule__topbar {
     max-height: 0;
     padding-top: 0;
     padding-bottom: 0;
     opacity: 0;
     border-radius: 0;
-  }
+  } */
+
   .org-capsule__contact {
     @apply flex items-center gap-2 no-underline
            font-sans text-[10px] font-light tracking-[2px]
@@ -551,59 +636,88 @@
   .org-capsule__contact:hover { @apply text-gold; }
   .org-capsule__contact-icon  { @apply text-gold flex-shrink-0; }
 
-  /* ── Bottom strip — warm cream, logo + links + CTA ── */
+  /* ── Main Nav strip — warm cream, logo + links + CTA ── */
   .org-capsule__nav {
     @apply flex items-center justify-between gap-4
-           px-5 md:px-6 py-2.5
+           px-5 md:px-6 lg:px-8 py-2.5
+           /* px-4 md:px-6 lg:px-8  */
            bg-cream
            transition-all duration-500;
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  @media (max-width: 1024px) {
+    .org-capsule__nav { @apply w-screen }
+  }
+  @media (min-width: 1024px) {
+    /* Scrolled: slightly reduce vertical padding */
+    .org-nav-outer.scrolled .org-capsule__nav {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
 
+  /* Commented as replaced by media queries for static responsive Navbar */
   /* Scrolled: slightly reduce vertical padding */
-  .org-nav-outer.scrolled .org-capsule__nav {
+  /* .org-nav-outer.scrolled .org-capsule__nav {
     padding-top: 8px;
     padding-bottom: 8px;
     background: #F0EAD8;
-  }
+  } */
 
   /* Logo */
   .org-capsule__logo {
     @apply flex items-center gap-3 no-underline flex-shrink-0;
   }
   .org-capsule__logo-img {
-    @apply h-10 w-auto object-contain
+    @apply h-9 md:h-10 w-auto object-contain
             /* Commented for static + capsule navbar with responsive design */
             /* md:h-11 */
             transition-all duration-500;
   }
-
-  .org-nav-outer.scrolled .org-capsule__logo-img {
-    @apply h-9;
+  @media (min-width: 1024px) {
+    .org-nav-outer.scrolled .org-capsule__logo-img { height: 36px; }
   }
 
-  /* Nav links on cream — dark text, gold on hover */
+  /* Commented as replaced by media queries for static responsive Navbar */
+  /* .org-nav-outer.scrolled .org-capsule__logo-img {
+    @apply h-9;
+  } */
+
+  /* Nav links on cream — dark text, gold on hover, hidden until lg */
   .org-capsule__links {
-    @apply hidden md:flex gap-6 lg:gap-8 list-none;
+    /* Commented for static responsive Navbar */
+    /* @apply hidden md:flex gap-6 lg:gap-8 list-none; */
+
+    @apply hidden lg:flex gap-6 lg:gap-8 list-none;
   }
 
   /* CTA button */
   .org-capsule__cta {
-    @apply hidden md:inline-block no-underline
+    @apply hidden 
+           /* md:inline-block    Commented for static responsive Navbar */
+           lg:inline-block
+           no-underline
            font-sans text-[10px] font-light tracking-[3px] uppercase
            px-5 py-2.5 text-cream
            transition-colors duration-300;
     background: #B8922E;
     border-radius: 10px;
+    white-space: nowrap;
   }
   .org-capsule__cta:hover { background: #C9A84C; }
+
+  /* Commented as replaced by media queries for static responsive Navbar */
   /* Scrolled: square the CTA button to match the bar */
-  .org-nav-outer.scrolled .org-capsule__cta {
+  /* .org-nav-outer.scrolled .org-capsule__cta {
     border-radius: 6px;
+  } */
+
+  @media (min-width: 1024px) {
+    .org-nav-outer.scrolled .org-capsule__cta { border-radius: 6px; }
   }
 
-  /* Hero */
+  /* ── Hero — dark navy background ── */
   .org-hero {
     @apply relative min-h-screen flex items-center
            px-5 md:px-16 
@@ -611,8 +725,10 @@
            pb-36 md:pb-28
            bg-navy overflow-hidden;
            /* Extra top padding accounts for capsule nav height (~108px) */
-            padding-top: 140px;
+            padding-top: 100px;
   }
+  /* ── Hero — dark navy background ── */
+
   .org-hero__bg {
     @apply absolute inset-0 pointer-events-none;
     background:

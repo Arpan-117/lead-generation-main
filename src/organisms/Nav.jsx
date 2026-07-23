@@ -31,10 +31,11 @@ const CONTACT = [
   },
 ];
 
+// Commenting for static responsive Navbar
 // Scroll threshold — trigger just before leaving the hero section
-const SCROLL_THRESHOLD = typeof window !== 'undefined'
-  ? window.innerHeight - 80
-  : 600;
+// const SCROLL_THRESHOLD = typeof window !== 'undefined'
+//   ? window.innerHeight - 80
+//   : 600;
 
 // Simple Navbar with Top Banner - commented
 // export function Nav() {
@@ -163,9 +164,10 @@ export function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    const threshold = window.innerHeight - 80;    // Added for static responsive Navbar
+    const onScroll = () => setScrolled(window.scrollY > threshold);
     // Run once on mount in case page is loaded mid-scroll
-    onScroll();
+    onScroll(); // check on mount
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -188,6 +190,7 @@ export function Nav() {
 
           {/* Top strip — dark navy, contact info */}
           {/* Top strip — collapses to 0 height on scroll */}
+          {/* Topbar — only renders visibly on lg+ via CSS */}
           <div className="org-capsule__topbar">
             {CONTACT.map(({ icon, label, href }) => (
               <a key={href} href={href} className="org-capsule__contact">
@@ -199,27 +202,27 @@ export function Nav() {
           </div>
 
           {/* Bottom strip — warm cream, logo + links + CTA */}
-          {/* Nav strip — always visible */}
+          {/* Nav strip — always visible at all sizes */}
           <div className="org-capsule__nav">
             <Link to="/" className="org-capsule__logo" onClick={closeMenu}>
               <img
-                src="/Logo.png"
+                src="/Logo.PNG"
                 alt="Chowdhury Global Ventures"
                 className="org-capsule__logo-img"
               />
             </Link>
 
-            {/* Desktop links */}
+            {/* Desktop links — hidden below lg */}
             <ul className="org-capsule__links">
               <NavLinks />
             </ul>
 
-            {/* Desktop CTA */}
+            {/* Desktop CTA — hidden below lg */}
             <Link to="/#contact" className="org-capsule__cta" onClick={closeMenu}>
               Begin Partnership
             </Link>
 
-            {/* Hamburger — mobile only */}
+            {/* Hamburger — visible below lg */}
             <button
               className={`mol-hamburger ${menuOpen ? 'open' : ''}`}
               onClick={() => setMenuOpen(o => !o)}
@@ -232,7 +235,7 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Mobile slide-down menu */}
+      {/* Mobile and tablet slide-down menu */}
       <div className={`org-nav__mobile-menu ${menuOpen ? 'open' : ''}`}>
         <Link to="/" onClick={closeMenu}>
           <img
