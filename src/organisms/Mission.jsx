@@ -6,7 +6,7 @@ export function Mission() {
       <SectionLabel center>Our Mission</SectionLabel>
 
       <blockquote className="org-vision__quote">
-        To earn trust through integrity and become the preferred one-stop global sourcing and trading partner by connecting markets, delivering seamless procurement solutions, and creating lasting value for customers, partners, and communities worldwide.
+        "To earn trust through integrity and become the preferred one-stop global sourcing and trading partner by connecting markets, delivering seamless procurement solutions, and creating lasting value for customers, partners, and communities worldwide."
       </blockquote>
 
       <p className="org-vision__attr">

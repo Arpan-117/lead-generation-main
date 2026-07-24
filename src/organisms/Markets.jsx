@@ -32,7 +32,7 @@ export function Markets() {
             Global Markets.<br /><em>Trusted Partnerships.</em>
           </SectionHeading>
           <BodyText className="mt-4 ">
-            Wherever your business operates, CGV International delivers reliable sourcing, procurement, and trading solutions through a trusted global network.
+            Wherever your business operates, CGV delivers reliable sourcing, procurement, and trading solutions through a trusted global network.
           </BodyText>
         </div>
       </div>

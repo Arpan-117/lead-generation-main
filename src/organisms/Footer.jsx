@@ -98,8 +98,8 @@ export function Footer() {
             <Link to="/" className="org-footer__brand-name">
               {/* CGV <span>· Chowdhury Global Ventures</span> */}
               <img
-                src="/Logo.PNG"
-                alt="Chowdhury Global Ventures"
+                src="/Logo.png"
+                alt="CGV Logo"
                 className="org-footer__logo"
               />
             </Link>

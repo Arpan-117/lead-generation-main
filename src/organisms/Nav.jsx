@@ -206,8 +206,8 @@ export function Nav() {
           <div className="org-capsule__nav">
             <Link to="/" className="org-capsule__logo" onClick={closeMenu}>
               <img
-                src="/Logo.PNG"
-                alt="Chowdhury Global Ventures"
+                src="/Logo.png"
+                alt="CGV"
                 className="org-capsule__logo-img"
               />
             </Link>
