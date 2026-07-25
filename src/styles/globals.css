@@ -719,40 +719,105 @@
 
   /* ── Hero — dark navy background ── */
   .org-hero {
-    @apply relative min-h-screen flex items-center
+    @apply relative min-h-screen flex flex-col 
+           /* items-center    - Commented for new Hero UI */
            px-5 md:px-16 
            /* pt-32  */
-           pb-36 md:pb-28
+           pb-36 md:pb-16
            bg-navy overflow-hidden;
            /* Extra top padding accounts for capsule nav height (~108px) */
-            padding-top: 100px;
+            padding-top: 50px;
   }
-  /* ── Hero — dark navy background ── */
 
-  .org-hero__bg {
+  /* Subtle radial bg still applies behind everything */
+  /* .org-hero__bg {
     @apply absolute inset-0 pointer-events-none;
     background:
       radial-gradient(ellipse 60% 80% at 80% 50%, rgba(184,146,46,0.07) 0%, transparent 60%),
       radial-gradient(ellipse 40% 40% at 20% 80%, rgba(184,146,46,0.05) 0%, transparent 50%);
+  } */
+
+  /* ── Carousel ── */
+  .org-hero__carousel {
+    @apply relative w-full overflow-hidden z-10;
+    height: 30vw;       /* landscape ratio — fills width */
+    max-height: 600px;  /* cap on very wide screens */
+    min-height: 220px;  /* floor on very small screens */
   }
-  .org-hero__globe {
+  .org-hero__slides {
+    @apply flex h-full transition-transform duration-700 ease-in-out;
+  }
+  .org-hero__slide {
+    @apply flex-shrink-0 w-full h-full relative;
+  }
+  .org-hero__slide img {
+    @apply w-full h-full object-cover;
+  }
+  /* Placeholder slide for when real images are not yet available */
+  .org-hero__slide-placeholder {
+    @apply w-full h-full flex items-center justify-center;
+    background: linear-gradient(135deg, #0A1628 0%, #122040 60%, #1a2e52 100%);
+  }
+  .org-hero__slide-placeholder-label {
+    @apply font-sans text-[10px] font-light tracking-[5px] uppercase;
+    color: rgba(184,146,46,0.4);
+  }
+
+  /* Dot indicators */
+  .org-hero__dots {
+    @apply absolute bottom-4 left-0 right-0 z-20
+           flex items-center justify-center gap-2;
+  }
+  .org-hero__dot {
+    @apply w-1.5 h-1.5 rounded-full border-0 cursor-pointer p-0
+           transition-all duration-300;
+    background: rgba(248,244,236,0.3);
+  }
+  .org-hero__dot.active {
+    @apply w-5;
+    background: #B8922E;
+    border-radius: 999px;
+  }
+
+  /* Prev / Next arrow buttons */
+  .org-hero__arrow {
+    @apply absolute top-1/2 -translate-y-1/2 z-20
+           w-9 h-9 flex items-center justify-center
+           border border-gold/30 rounded-full
+           bg-navy/40 backdrop-blur-sm
+           cursor-pointer transition-all duration-300
+           hover:border-gold hover:bg-navy/70;
+    color: rgba(248,244,236,0.7);
+  }
+  .org-hero__arrow--prev { @apply left-3 md:left-5; }
+  .org-hero__arrow--next { @apply right-3 md:right-5; }
+
+  /* Commenting as this is no longer needed for new Hero UI */
+  /* .org-hero__globe {
     @apply hidden lg:block absolute right-[6%] opacity-10 animate-spin-slow;
     top: 50%;
     width: 420px;
     height: 420px;
     transform: translateY(-50%);
+  } */
+
+  /* ── Content block below carousel ── */
+  .org-hero__content  { 
+    /* @apply relative z-10 max-w-xl lg:max-w-2xl;    - Commented for new Hero UI */
+    @apply relative z-10 px-5 md:px-16 pt-10 pb-24 md:pb-28;
   }
-  .org-hero__content  { @apply relative z-10 max-w-xl lg:max-w-2xl; }
-  .org-hero__eyebrow  { @apply atom-eyebrow mb-8 animate-fade-up-1; }
-  .org-hero__title    { @apply atom-display mb-4 animate-fade-up-2 text-cream; }
-  .org-hero__sub      { @apply atom-body mb-10 max-w-md animate-fade-up-3; color: rgba(248,244,236,0.55); }
-  .org-hero__actions  { @apply flex flex-col sm:flex-row gap-4 sm:items-center animate-fade-up-4; }
-  .org-hero__stats {
+  .org-hero__eyebrow  { @apply atom-eyebrow justify-center mb-8 animate-fade-up-1; }
+  .org-hero__title    { @apply atom-display text-center mb-4 animate-fade-up-2 text-cream; }
+  .org-hero__sub      { @apply atom-body text-center mb-10 animate-fade-up-3; color: rgba(248,244,236,0.55); }
+  .org-hero__actions  { @apply flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-center animate-fade-up-4; }
+
+  /* Commenting as this is no longer needed in new Hero UI */
+  /* .org-hero__stats {
     @apply absolute bottom-6 left-5 right-5 md:left-16 md:right-16
            flex gap-6 sm:gap-10 pt-6
            border-t border-gold/20
            animate-fade-up-5;
-  }
+  } */
 
   /* Marquee */
   .org-marquee        { @apply bg-navy-light py-3 overflow-hidden; }
