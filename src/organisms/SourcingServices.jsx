@@ -8,7 +8,7 @@ import { WorkflowStep }   from '../molecules/WorkflowStep';
 const CUSTOM_PROCUREMENT = {
   subtitle: 'Custom Procurement',
   title:    'Source the Right Products at Competitive Prices',
-  bodyPara1:     'Finding dependable suppliers can be time-consuming and challenging. Our custom procurement service helps international buyers identify and source products that meet their technical specifications, quality requirements, and commercial objectives. We work closely with clients.',
+  bodyPara1:     'Finding dependable suppliers can be time-consuming and challenging. Our custom procurement service helps international buyers identify and source products that meet their technical specifications, quality requirements, and commercial objectives.',
   bodyPara2:     'We work closely with clients to understand their exact needs and coordinate with reputable manufacturers and suppliers across India to provide suitable sourcing solutions.',
   items: [
     'Product sourcing based on client specifications',
@@ -129,7 +129,7 @@ export function SourcingServices() {
             bodyPara2={CUSTOM_PROCUREMENT.bodyPara2}
             items={CUSTOM_PROCUREMENT.items}
             closingPara={CUSTOM_PROCUREMENT.closingPara}
-            collapsedCount={5}
+            // collapsedCount={5}
           />
           <ServiceCard
             subtitle={OEM_PRIVATE_LABEL.subtitle}
@@ -138,7 +138,7 @@ export function SourcingServices() {
             bodyPara2={OEM_PRIVATE_LABEL.bodyPara2}
             items={OEM_PRIVATE_LABEL.items}
             closingPara={OEM_PRIVATE_LABEL.closingPara}
-            collapsedCount={5}
+            // collapsedCount={5}
           />
         </div>
 

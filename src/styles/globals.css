@@ -740,7 +740,7 @@
   /* ── Carousel ── */
   .org-hero__carousel {
     @apply relative w-full overflow-hidden z-10;
-    height: 30vw;       /* landscape ratio — fills width */
+    height: 35vw;       /* landscape ratio — fills width */
     max-height: 600px;  /* cap on very wide screens */
     min-height: 220px;  /* floor on very small screens */
   }

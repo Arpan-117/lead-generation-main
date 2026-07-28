@@ -179,7 +179,7 @@ export function TradeProcess() {
           <SectionHeading>
             Simple, transparent<br /><em>trade process.</em>
           </SectionHeading>
-          <BodyText className="mt-4 max-w-xl">
+          <BodyText className="mt-4">
             Getting started with us is straightforward. Every order follows the same
             four stages, aligned to international commercial standards, so you spend
             less time on paperwork and more time running your business.

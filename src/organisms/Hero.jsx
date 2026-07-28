@@ -32,11 +32,11 @@ import { StatBlock }     from '../molecules/StatBlock';
  */
 
 const SLIDES = [
-  { src: '/hero-1.jpg', alt: 'Global trade operations' },
-  { src: '/hero-2.jpg', alt: 'Industrial supply chain' },
-  { src: '/hero-3.jpg', alt: 'Shipping and logistics' },
-  { src: '/hero-4.jpg', alt: 'Manufacturing excellence' },
-  { src: '/hero-5.jpg', alt: 'Market partnerships' },
+  { src: '/Hero/Hero Sec - 1.png', alt: 'Global trade operations' },
+  { src: '/Hero/Hero Sec - 2.png', alt: 'Industrial supply chain' },
+  { src: '/Hero/Hero Sec - 3.png', alt: 'Shipping and logistics' },
+  { src: '/Hero/Hero Sec - 4.png', alt: 'Manufacturing excellence' },
+  { src: '/Hero/Hero Sec - 5.png', alt: 'Market partnerships' },
 ];
 
 const SLIDE_INTERVAL = 5000;
