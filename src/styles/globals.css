@@ -67,10 +67,10 @@
     /* color: rgba(184,146,46,0.25); */
   }
   .atom-pillar-name {
-    @apply font-sans text-[12px] font-normal tracking-[3px] text-gold uppercase mb-3;
+    @apply font-sans text-[12px] font-semibold tracking-[3px] text-gold uppercase mb-3;
   }
   .atom-pillar-desc {
-    @apply font-content text-[12px] text-muted italic leading-[1.7];
+    @apply font-content text-[15px] text-muted italic leading-[1.7];
   }
 
   /* Buttons */
@@ -168,8 +168,9 @@
            scale-x-0 origin-left transition-transform duration-300;
   }
   .mol-market-card:hover::after { @apply scale-x-100; }
+  .mol-market-image { @apply w-full }
   .mol-market-flag  { @apply text-[36px] md:text-[40px] mb-5 block; }
-  .mol-market-region { @apply font-sans text-[12px]  tracking-[4px] text-gold uppercase mb-3; }
+  .mol-market-region { @apply font-sans text-[12px]  tracking-[4px] text-gold uppercase mb-3 pt-4; }
   .mol-market-title { @apply font-serif text-[24px] md:text-[28px] font-medium text-navy mb-4 leading-[1.2]; }
   .mol-market-desc  { @apply font-content text-[15px] text-muted leading-[1.7]; }
 
@@ -833,11 +834,14 @@
   }
   .org-about__frame {
     @apply relative bg-cream-mid border border-gold/20 aspect-[4/5]
-           order-2 md:order-1;
+           order-2 md:order-1 overflow-hidden;
   }
   .org-about__frame::before {
     content: '';
     @apply absolute top-4 left-4 -right-4 -bottom-4 border border-gold/15 -z-10;
+  }
+  .org-about__image {
+    @apply w-full h-full object-cover object-center;
   }
   .org-about__content { @apply order-1 md:order-2 flex flex-col justify-center; }
   .org-about__values  { @apply flex flex-col sm:flex-row gap-6 mt-8 pt-6 border-t border-gold/20; }

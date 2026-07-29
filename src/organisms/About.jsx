@@ -13,9 +13,11 @@ export function About() {
     <section id="about" className="org-about">
       {/* Image frame */}
       <div className="org-about__frame">
-        <div className="w-full h-full flex items-center justify-center">
-          <GlobeArt size={220} />
-        </div>
+         <img
+          src="/About.png"
+          alt="Chowdhury Global Ventures — our story"
+          className="org-about__image"
+        />
       </div>
 
       {/* Content */}

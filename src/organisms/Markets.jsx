@@ -7,18 +7,21 @@ const MARKETS = [
     region: 'Global',
     title:  '1',
     desc:   "Serving customers across every major international market with dependable sourcing and supply chain solutions.",
+    pic: "/Markets/Global.png",
   },
   {
     flag:   '🤝',
     region: 'Worldwide Partnerships',
     title:  '2',
     desc:   'Collaborating with trusted manufacturers, suppliers, and logistics partners to ensure quality, reliability, and competitive pricing.',
+    pic: "/Markets/Partnership.png",
   },
   {
     flag:   '🚢',
     region: 'Cross-Border Trade',
     title:  '3',
     desc:   "Supporting seamless import, export, procurement, and international logistics for businesses around the world.",
+    pic: "/Markets/Trade.png",
   },
 ];
 
@@ -45,6 +48,7 @@ export function Markets() {
             region={m.region}
             title={m.title}
             desc={m.desc}
+            pic={m.pic}
           />
         ))}
       </div>
