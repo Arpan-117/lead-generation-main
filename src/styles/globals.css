@@ -302,22 +302,54 @@
            transition-all duration-300;
   }
   .mol-industry-card:hover {
-    @apply bg-navy border-gold;
+    @apply border-gold;
+           /* bg-navy; */
   }
+
+  /* 16:9 image area */
+  .mol-industry-card__image {
+    @apply w-full flex-shrink-0 overflow-hidden;
+    aspect-ratio: 16 / 9;
+  }
+  .mol-industry-card__image img {
+    @apply w-full h-full object-cover object-center
+           transition-transform duration-500;
+  }
+  .mol-industry-card:hover .mol-industry-card__image img {
+    @apply scale-105;
+  }
+  /* Placeholder shown while/if image fails to load */
+  .mol-industry-card__img-placeholder {
+    @apply w-full h-full flex items-center justify-center;
+    background: linear-gradient(135deg, #0A1628 0%, #122040 100%);
+  }
+  .mol-industry-card__img-placeholder span {
+    @apply font-sans text-[10px] font-light tracking-[4px] uppercase;
+    color: rgba(184,146,46,0.45);
+  }
+
+  /* Card body */
+  .mol-industry-card__body {
+    @apply flex flex-col flex-1 px-6 pt-5;
+  }
+
+  /* Removed for new Card UI Design */
   /* Gold sweep underline */
-  .mol-industry-card::after {
+  /* .mol-industry-card::after {
     content: '';
     @apply absolute bottom-0 left-0 right-0 h-0.5 bg-gold
            scale-x-0 origin-left transition-transform duration-500;
-  }
-  .mol-industry-card:hover::after {
+  } */
+  /* Removed for new Card UI Design */
+  /* .mol-industry-card:hover::after {
     @apply scale-x-100;
-  }
+  } */
 
+  /* Removed for new Card UI Design */
   /* Icon — sits at top, shifts up on hover */
-  .mol-industry-card__icon {
+  /* .mol-industry-card__icon {
     @apply text-[34px] leading-none mb-5 block flex-shrink-0;
-  }
+  } */
   /* .mol-industry-card:hover .mol-industry-card__icon {
     @apply -translate-y-2 opacity-80;
   } */
@@ -331,6 +363,7 @@
     @apply -translate-y-3;
   } */
 
+  /* Title — always visible */
   .mol-industry-card__title {
     @apply font-sans text-[14px] font-normal tracking-[3px]
            text-gold uppercase mb-3
@@ -340,15 +373,27 @@
     @apply text-gold-light;
   }
 
+  /* Expandable block — desc + solutions, hidden by default */
+  .mol-industry-card__expandable {
+    @apply overflow-hidden;
+    max-height: 0;
+    transition: max-height 0.45s ease;
+  }
+  .mol-industry-card__expandable.open {
+    max-height: 400px;
+  }
+
   /* Description — hidden by default, fades in on hover */
   .mol-industry-card__desc {
-    @apply font-content text-[14px] font-normal text-navy leading-[1.7] mb-4
+    @apply font-content text-[14px] font-normal text-muted leading-[1.7] mb-4
            transition-colors duration-300;
   }
-  .mol-industry-card:hover .mol-industry-card__desc {
+  
+  /* Removed for new Card UI Design */
+  /* .mol-industry-card:hover .mol-industry-card__desc {
     @apply text-white
-    /* color: rgba(248,244,236,0.7); */
-  }
+    color: rgba(248,244,236,0.7);
+  } */
   /* .mol-industry-card:hover .mol-industry-card__desc {
     @apply max-h-[120px] opacity-100 mt-3;
   } */
@@ -365,9 +410,27 @@
            transition-colors duration-300 mt-auto;
     /* color: rgba(10,22,40,0.6); */
   }
-  .mol-industry-card:hover .mol-industry-card__solutions {
-    color: rgba(248,244,236,0.5);
+
+  /* Toggle button — always visible at bottom of card */
+  .mol-industry-card__toggle {
+    @apply flex items-center gap-2 w-full
+           px-6 py-3 mt-auto
+           font-sans text-[10px] font-normal tracking-[2px] uppercase text-gold
+           bg-transparent border-0 border-t border-gold/15
+           cursor-pointer transition-all duration-300
+           hover:bg-gold/5;
   }
+  .mol-industry-card__toggle-icon {
+    @apply transition-transform duration-300;
+  }
+  .mol-industry-card__toggle.open .mol-industry-card__toggle-icon {
+    @apply rotate-180;
+  }
+
+  /* Removed for new Card UI Design */
+  /* .mol-industry-card:hover .mol-industry-card__solutions {
+    color: rgba(248,244,236,0.5);
+  } */
 
   /* .mol-industry-card {
     @apply flex items-center gap-3
