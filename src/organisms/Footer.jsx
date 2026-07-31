@@ -31,7 +31,7 @@ const PRODUCT_LINKS = [
 const SOCIAL_LINKS = [
   {
     label: 'LinkedIn',
-    href:  'https://linkedin.com',
+    href:  'https://linkedin.com/company/chowdhury-global-ventures/',
     icon:  (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor" className="w-[15px] h-[15px]">
       {/* <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--> */}
@@ -41,7 +41,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: 'WhatsApp',
-    href:  'https://wa.me/910000000000',
+    href:  'https://wa.me/+917903490796',
     icon:  (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -49,15 +49,27 @@ const SOCIAL_LINKS = [
     ),
   },
   {
-    label: 'IndiaMART',
-    href:  'https://indiamart.com',
-    icon:  <span className="text-[11px] font-bold leading-none">iM</span>,
+    label: 'Facebook',
+    href:  'https://www.facebook.com/ChowdhuryGlobal',
+    icon:  (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor" className="w-[17px] h-[17px]">
+      {/* <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--> */}
+        <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L258.2 544L258.2 398.2L205.4 398.2L205.4 320L258.2 320L258.2 286.3C258.2 199.2 297.6 158.8 383.2 158.8C399.4 158.8 427.4 162 438.9 165.2L438.9 236C432.9 235.4 422.4 235 409.3 235C367.3 235 351.1 250.9 351.1 292.2L351.1 320L434.7 320L420.3 398.2L351 398.2L351 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96z"/>
+      </svg>
+    ),
   },
-  {
-    label: 'Alibaba',
-    href:  'https://alibaba.com',
-    icon:  <span className="text-[11px] font-bold leading-none">Ab</span>,
-  },
+
+  // Removed as these are irrelevant
+  // {
+  //   label: 'IndiaMART',
+  //   href:  'https://indiamart.com',
+  //   icon:  <span className="text-[11px] font-bold leading-none">iM</span>,
+  // },
+  // {
+  //   label: 'Alibaba',
+  //   href:  'https://alibaba.com',
+  //   icon:  <span className="text-[11px] font-bold leading-none">Ab</span>,
+  // },
 ];
 
 // ── Sub-components ──────────────────────────────────────────────────────────
@@ -98,7 +110,7 @@ export function Footer() {
             <Link to="/" className="org-footer__brand-name">
               {/* CGV <span>· Chowdhury Global Ventures</span> */}
               <img
-                src="/Logo.png"
+                src="/NewLogo1.png"
                 alt="CGV Logo"
                 className="org-footer__logo"
               />
@@ -135,7 +147,7 @@ export function Footer() {
           </div>
 
           {/* Col 3 — Products */}
-          <div>
+          {/* <div>
             <FooterHeading>Products</FooterHeading>
             <ul className="mol-footer-links" role="list">
               {PRODUCT_LINKS.map(({ label, to }) => (
@@ -143,7 +155,7 @@ export function Footer() {
               ))}
               <FooterLink to="/products">View All →</FooterLink>
             </ul>
-          </div>
+          </div> */}
 
           {/* Col 4 — Contact */}
           <div>
@@ -153,12 +165,14 @@ export function Footer() {
                 India
               </ContactRow>
               <ContactRow icon={<Phone size={14} strokeWidth={1.75} />}>
-                +91 00000 00000
+                +91 7903490796
               </ContactRow>
               <ContactRow icon={<Mail size={14} strokeWidth={1.75} />}>
-                contact@chowdhuryglovalventures.com
+                hello@chowdhuryglobal.com
               </ContactRow>
-              <ContactRow
+
+              {/* This is not needed as it is not relevant */}
+              {/* <ContactRow
                 icon={
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-[14px] h-[14px]">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -166,7 +180,8 @@ export function Footer() {
                 }
               >
                 WhatsApp Available
-              </ContactRow>
+              </ContactRow> */}
+
             </div>
           </div>
 

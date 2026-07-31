@@ -90,7 +90,7 @@ export function Industries() {
       <div className="org-industries__header">
         <SectionLabel>Industries Served</SectionLabel>
         <SectionHeading>
-          Powering diverse sectors<br /><em>across the globe.</em>
+          Powering diverse sectors <em>across the globe.</em>
         </SectionHeading>
         <BodyText className="mt-4 ">
           Our products are trusted by businesses operating in some of the most

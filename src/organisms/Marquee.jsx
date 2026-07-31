@@ -1,4 +1,4 @@
-const ITEMS = ['India', '·', 'Middle East', '·', 'Africa', '·', 'Trade', '·', 'Trust', '·', 'Legacy', '·'];
+const ITEMS = ['Trade', '·', 'Trust', '·', 'Legacy', '·', 'Integrity', '·', 'Partnership', '·'];
 // Duplicate for seamless loop
 const TRACK = [...ITEMS, ...ITEMS, ...ITEMS, ...ITEMS];
 

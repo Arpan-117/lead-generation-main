@@ -11,6 +11,7 @@ import { useState } from 'react';
 // export function ServiceCard({ subtitle, title, bodyPara1, bodyPara2, items, closingPara, collapsedCount = 4 }) {
 export function ServiceCard({ subtitle, title, bodyPara1, bodyPara2, items, closingPara }) {
   const [expanded, setExpanded] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const expandedHeight = 150 + items.length * 44;
 
@@ -60,13 +61,15 @@ export function ServiceCard({ subtitle, title, bodyPara1, bodyPara2, items, clos
 
       {/* Collapsible block — hidden when collapsed */}
       <div
-        className="mol-service-card__overflow"
-        style={{
+        className={`mol-service-card__overflow ${open ? 'open' : ''}`}
+        // style={{
           // maxHeight:  expanded ? `${expandedHeight}px` : '0px',
-          maxHeight:  expanded ? `${150 + items.length * 44}px` : '0px',
-          overflow:   'hidden',
-          transition: ' 0.5s ease',
-        }}
+          // maxHeight:  expanded ? `${150 + items.length * 44}px` : '0px',
+          // overflow:   'hidden',
+          // transition: ' 0.5s ease',
+        // }}
+        onClick={() => setOpen(o => !o)}
+        aria-expanded={open}
       >
         <p className="mol-service-card__body">{bodyPara2}</p>
         <ul className="mol-service-card__list">
@@ -80,10 +83,10 @@ export function ServiceCard({ subtitle, title, bodyPara1, bodyPara2, items, clos
       {/* Toggle button — always visible */}
       <button
         className="mol-service-card__read-more"
-        onClick={() => setExpanded(e => !e)}
-        aria-expanded={expanded}
+        onClick={() => setOpen(o => !o)}
+        aria-expanded={open}
       >
-        {expanded ? 'Read less ↑' : 'Read more ↓'}
+        {open ? 'Read less ↑' : 'Read more ↓'}
       </button>
 
     </div>

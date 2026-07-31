@@ -70,8 +70,8 @@ export function Hero() {
 
         {/* Title — org-hero__title overrides atom-display to cream on dark bg */}
         <h1 className="org-hero__title mb-4 animate-fade-up-2">
-          Trade built on<br />
-          <em>trust &amp; legacy.</em>
+          Trade built on
+          <em> trust &amp; legacy.</em>
         </h1>
 
         {/* <BodyText className="org-hero__sub"> */}

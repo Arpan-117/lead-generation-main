@@ -116,7 +116,7 @@ export function SourcingServices() {
         <div className="org-sourcing__header">
           <SectionLabel>Sourcing Services</SectionLabel>
           <SectionHeading>
-            Procurement built on<br /><em>relationships &amp; results.</em>
+            Procurement built on <em>relationships &amp; results.</em>
           </SectionHeading>
         </div>
 

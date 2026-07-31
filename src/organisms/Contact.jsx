@@ -4,7 +4,7 @@ import { ButtonPrimary } from '../atoms/Button';
 import { FormField } from '../atoms/FormField';
 
 const DETAILS = [
-  { key: 'Email',   val: 'contact@chowdhuryglovalventures.com' },
+  { key: 'Email',   val: 'hello@chowdhuryglobal.com' },
   { key: 'Based in', val: 'India' },
   // { key: 'Markets', val: 'India · Middle East · Africa' },
   { key: 'Headquarters', val: 'Jamshedpur, Jharkhand' },
@@ -38,7 +38,7 @@ export function Contact() {
 
         <SectionHeading className="mb-6">
           {/* Begin a<br /><em>partnership.</em> */}
-          Ready to Elevate Your Project?<br /><em>Let’s Connect!</em>
+          Ready to Elevate Your Project? <em>Let’s Connect!</em>
         </SectionHeading>
 
         <BodyText className="mb-8">

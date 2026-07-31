@@ -9,7 +9,7 @@
 ───────────────────────────────────────────────────────────────────────────── */
 @layer base {
   html { @apply scroll-smooth; }
-  body { @apply font-serif bg-navy text-navy overflow-x-hidden; }
+  body { @apply font-serif text-navy overflow-x-hidden; }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -19,7 +19,7 @@
 
   /* Typography */
   .atom-eyebrow {
-    @apply font-sans text-[12px] font-semibold tracking-[5px] text-gold uppercase
+    @apply font-sans text-[14px] font-semibold tracking-[5px] text-gold uppercase
            flex items-center gap-4;
   }
   .atom-eyebrow::before {
@@ -28,7 +28,7 @@
   }
 
   .atom-section-label {
-    @apply font-sans text-[12px] font-semibold tracking-[5px] text-gold uppercase
+    @apply font-sans text-[14px] font-semibold tracking-[5px] text-gold uppercase
            flex items-center gap-4 mb-6;
   }
   .atom-section-label::before {
@@ -52,7 +52,7 @@
   .atom-heading em { font-style: italic !important; @apply text-gold; }
 
   .atom-body {
-    @apply font-content text-[17px] font-normal leading-[1.9] text-muted;
+    @apply font-content text-[17px] text-justify font-normal leading-[1.9] text-muted;
   }
 
   .atom-stat-number {
@@ -62,28 +62,31 @@
     @apply font-sans text-[10px] font-light tracking-[3px] text-muted uppercase mt-1;
   }
 
-  .atom-pillar-number {
-    @apply font-serif text-[40px] md:text-[48px] font-light text-gold/60 leading-none mb-4;
+  /* Commented as this block is no longer being used */
+  /* .atom-pillar-number {
+    @apply font-serif text-[40px] md:text-[48px] font-light text-gold/60 leading-none mb-4; */
     /* color: rgba(184,146,46,0.25); */
-  }
+  /* } */
+
   .atom-pillar-name {
-    @apply font-sans text-[12px] font-semibold tracking-[3px] text-gold uppercase mb-3;
+    @apply font-sans text-[14px] font-semibold tracking-[3px] text-gold uppercase mb-3;
   }
   .atom-pillar-desc {
-    @apply font-content text-[15px] text-muted italic leading-[1.7];
+    @apply font-content text-[17px] text-muted italic leading-[1.7];
   }
 
   /* Buttons */
   .atom-btn-primary {
     @apply font-sans text-[11px] tracking-[3px] uppercase
-           bg-gold text-cream px-8 py-4 inline-block
-           transition-all duration-300 hover:bg-gold-light hover:-translate-y-px
+           bg-navy-light font-semibold text-cream px-8 py-4 inline-block
+           transition-all duration-300 hover:bg-navy hover:-translate-y-px
            active:translate-y-0 cursor-pointer border-0 no-underline;
   }
   .atom-btn-ghost {
     @apply font-sans text-[11px] tracking-[3px] uppercase
-           text-gold flex items-center gap-2
-           transition-all duration-300 hover:gap-4
+           text-gold font-semibold flex items-center gap-2
+           transition-all duration-300 hover:gap-4 hover:text-navy
+           hover:-translate-y-px active:translate-y-0
            bg-transparent border-0 cursor-pointer no-underline;
   }
 
@@ -122,7 +125,7 @@
     @apply h-14 w-auto object-contain mb-4;
   } */
   .mol-nav-link {
-    @apply font-sans text-[15px] font-medium tracking-[3px] text-navy
+    @apply font-sans text-[17px] font-medium tracking-[3px] text-navy
            no-underline  transition-colors duration-300 hover:text-gold-light;
   }
   .mol-nav-link:hover   { @apply text-gold-light; }
@@ -151,10 +154,10 @@
 
   /* Value item */
   .mol-value-name {
-    @apply font-sans text-[10px] font-semibold tracking-[3px] text-gold uppercase mb-1;
+    @apply font-sans text-[14px] font-semibold tracking-[3px] text-gold uppercase mb-1;
   }
   .mol-value-desc {
-    @apply font-content text-sm  text-muted leading-[1.5];
+    @apply font-content text-[17px] text-muted leading-[1.5];
   }
 
   /* Market card */
@@ -170,9 +173,9 @@
   .mol-market-card:hover::after { @apply scale-x-100; }
   .mol-market-image { @apply w-full }
   .mol-market-flag  { @apply text-[36px] md:text-[40px] mb-5 block; }
-  .mol-market-region { @apply font-sans text-[12px]  tracking-[4px] text-gold uppercase mb-3 pt-4; }
+  .mol-market-region { @apply font-sans text-[14px]  tracking-[4px] text-gold uppercase mb-3 pt-4; }
   .mol-market-title { @apply font-serif text-[24px] md:text-[28px] font-medium text-navy mb-4 leading-[1.2]; }
-  .mol-market-desc  { @apply font-content text-[15px] text-muted leading-[1.7]; }
+  .mol-market-desc  { @apply font-content text-[17px] text-muted leading-[1.7]; }
 
   /* Service Card molecule */
   .mol-service-card {
@@ -181,7 +184,7 @@
            transition-all duration-300;
   }
   .mol-service-card__subtitle {
-    @apply font-sans text-[12px] tracking-[4px] text-gold uppercase mb-3;
+    @apply font-sans font-semibold text-[14px] tracking-[4px] text-gold uppercase mb-3;
   }
   .mol-service-card__title {
     @apply font-serif text-[22px] md:text-[26px] font-medium text-navy leading-[1.2] mb-5;
@@ -189,16 +192,23 @@
   .mol-service-card__body  { @apply atom-body mb-5; }
   .mol-service-card__list  { @apply flex flex-col gap-2 mb-5; }
   .mol-service-card__item  {
-    @apply font-content text-[15px] text-muted leading-[1.6]
+    @apply font-content text-[17px] text-muted leading-[1.6]
            flex gap-3 items-baseline;
   }
   .mol-service-card__item::before {
     content: '⭐';
     @apply text-gold flex-shrink-0 text-[12px];
   }
-  .mol-service-card__overflow  { @apply overflow-hidden transition-all duration-500; }
+  .mol-service-card__overflow  { 
+    @apply overflow-hidden transition-all duration-500; 
+    max-height: 0;
+    transition: max-height 0.45s ease;
+  }
+  .mol-service-card__overflow.open {
+    max-height: 800px;
+  }
   .mol-service-card__read-more {
-    @apply font-sans text-[10px] font-light tracking-[3px] text-gold uppercase
+    @apply font-sans text-[14px] font-normal tracking-[3px] text-gold uppercase
            flex items-center gap-2 mt-auto pt-4 border-t border-gold/15
            bg-transparent border-x-0 border-b-0 cursor-pointer
            duration-300 hover:gap-4;
@@ -218,26 +228,29 @@
   /* Workflow step card */
   .mol-workflow-step {
     @apply bg-cream border border-gold/20 rounded-xl
-           p-5 md:p-6 flex flex-col;
+           p-5 md:p-6 flex flex-col
+           hover:bg-navy hover:border-[3px] hover:border-gold-light;
   }
-  .mol-workflow-step__num {
+
+  /* Commented because this block is not being used anymore */
+  /* .mol-workflow-step__num {
     @apply font-sans text-[10px] font-normal tracking-[3px]
            text-gold uppercase mb-1;
-  }
+  } */
   .mol-workflow-step__name {
-    @apply font-sans text-[12px] font-normal tracking-[1px]
+    @apply font-sans text-[14px] text-center font-normal tracking-[1px]
            text-gold uppercase mb-3;
   }
   .mol-workflow-step__desc {
-    @apply font-content text-[14px] font-light text-navy leading-[1.7];
+    @apply font-content text-[17px] font-normal text-muted text-justify leading-[1.7];
   }
 
   /* Contact details */
   .mol-contact-key {
-    @apply font-sans text-[12px] tracking-[3px] text-gold uppercase min-w-[80px] flex-shrink-0;
+    @apply font-sans text-[14px] tracking-[3px] text-gold uppercase min-w-[80px] flex-shrink-0;
   }
   .mol-contact-val {
-    @apply font-content text-base font-light text-muted;
+    @apply font-content text-base font-normal text-muted;
   }
   .mol-form-group { @apply flex flex-col gap-2; }
 
@@ -385,7 +398,7 @@
 
   /* Description — hidden by default, fades in on hover */
   .mol-industry-card__desc {
-    @apply font-content text-[14px] font-normal text-muted leading-[1.7] mb-4
+    @apply font-content text-[17px] font-normal text-justify text-muted leading-[1.7] mb-4
            transition-colors duration-300;
   }
   
@@ -400,13 +413,13 @@
 
   /* Solutions label */
   .mol-industry-card__solutions-label {
-    @apply font-sans text-[12px] font-normal tracking-[3px]
+    @apply font-sans text-[14px] font-normal tracking-[3px]
            text-gold uppercase mb-1.5;
   }
 
   /* Solutions text */
   .mol-industry-card__solutions {
-    @apply font-content text-[13px] font-light text-muted italic leading-[1.6]
+    @apply font-content text-[17px] font-normal text-muted leading-[1.6]
            transition-colors duration-300 mt-auto;
     /* color: rgba(10,22,40,0.6); */
   }
@@ -415,7 +428,7 @@
   .mol-industry-card__toggle {
     @apply flex items-center gap-2 w-full
            px-6 py-3 mt-auto
-           font-sans text-[10px] font-normal tracking-[2px] uppercase text-gold
+           font-sans text-[14px] font-normal tracking-[2px] uppercase text-gold
            bg-transparent border-0 border-t border-gold/15
            cursor-pointer transition-all duration-300
            hover:bg-gold/5;
@@ -457,27 +470,27 @@
   .mol-trade-step:last-child { @apply border-b-0; }
 
   .mol-trade-step__num {
-    @apply font-serif text-[22px] font-light text-gold leading-none pt-0.5;
+    @apply font-serif text-[22px] font-light text-navy-light leading-none pt-0.5;
   }
   .mol-trade-step__title {
-    @apply font-sans text-[11px] font-normal tracking-[2px]
-           text-navy uppercase mb-2;
+    @apply font-sans text-[14px] font-normal tracking-[2px]
+           text-gold uppercase mb-2;
   }
   .mol-trade-step__desc {
-    @apply font-content text-[14px] font-light text-navy leading-[1.7];
+    @apply font-content text-[17px] text-justify font-normal text-muted leading-[1.7];
   }
 
    /* Footer */
    /* Col headings */
   .mol-footer-heading {
-    @apply font-sans text-[10px] font-normal tracking-[4px]
+    @apply font-sans text-[14px] font-normal tracking-[4px]
            text-gold uppercase mb-5;
   }
  
   /* Footer links */
   .mol-footer-links { @apply flex flex-col gap-2.5 list-none; }
   .mol-footer-link {
-    @apply font-sans text-[11px] font-light tracking-[2px]
+    @apply font-sans text-[17px] font-light tracking-[2px]
            no-underline transition-colors duration-300
            hover:text-gold;
     color: rgba(248,244,236,0.45);
@@ -485,7 +498,7 @@
  
   /* Contact rows */
   .mol-footer-contact-row {
-    @apply flex items-start gap-3 font-serif text-[13px] font-light;
+    @apply flex items-start gap-3 font-serif text-[17px] font-light;
     color: rgba(248,244,236,0.45);
   }
   .mol-footer-contact-icon {
@@ -578,7 +591,7 @@
   /* Desktop at top: becomes pill */
   @media (min-width: 1024px) {
     .org-capsule { @apply mx-auto;
-      max-width: 1250px;
+      max-width: 1300px;
       /* max-width: 80%; */
       /* margin: 0 auto; */
       border-radius: 20px;
@@ -665,7 +678,7 @@
       border-radius: 20px 20px 0 0;
       /* padding-top: 6px;
       padding-bottom: 6px; */
-      max-height: 36px;
+      max-height: 40px;
       overflow: hidden;
       opacity: 1;
     }
@@ -691,11 +704,11 @@
 
   .org-capsule__contact {
     @apply flex items-center gap-2 no-underline
-           font-sans text-[10px] font-light tracking-[2px]
+           font-sans text-[10px] font-semibold tracking-[2px] text-white
            transition-colors duration-300 
            /* Added for capsule + static navbar */
            whitespace-nowrap;
-    color: rgba(248,244,236,0.5);
+    /* color: rgba(248,244,236,0.5); */
   }
   .org-capsule__contact:hover { @apply text-gold; }
   .org-capsule__contact-icon  { @apply text-gold flex-shrink-0; }
@@ -705,7 +718,7 @@
     @apply flex items-center justify-between gap-4
            px-5 md:px-6 lg:px-8 py-2.5
            /* px-4 md:px-6 lg:px-8  */
-           bg-cream
+           bg-cream-mid
            transition-all duration-500;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -761,11 +774,11 @@
     @apply hidden 
            /* md:inline-block    Commented for static responsive Navbar */
            lg:inline-block
-           no-underline
-           font-sans text-[10px] font-light tracking-[3px] uppercase
+           no-underline bg-navy-light
+           font-sans text-[10px] font-semibold tracking-[3px] uppercase
            px-5 py-2.5 text-cream
            transition-colors duration-300;
-    background: #B8922E;
+    /* background: #B8922E; */
     border-radius: 10px;
     white-space: nowrap;
   }
@@ -788,7 +801,7 @@
            px-5 md:px-16 
            /* pt-32  */
            pb-36 md:pb-16
-           bg-navy overflow-hidden;
+           bg-white overflow-hidden;
            /* Extra top padding accounts for capsule nav height (~108px) */
             padding-top: 50px;
   }
@@ -871,8 +884,8 @@
     @apply relative z-10 px-5 md:px-16 pt-10 pb-24 md:pb-28;
   }
   .org-hero__eyebrow  { @apply atom-eyebrow justify-center mb-8 animate-fade-up-1; }
-  .org-hero__title    { @apply atom-display text-center mb-4 animate-fade-up-2 text-cream; }
-  .org-hero__sub      { @apply atom-body text-center mb-10 animate-fade-up-3; color: rgba(248,244,236,0.55); }
+  .org-hero__title    { @apply atom-display text-center mb-4 animate-fade-up-2 text-navy; }
+  .org-hero__sub      { @apply atom-body text-justify mb-10 animate-fade-up-3 text-muted; }
   .org-hero__actions  { @apply flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-center animate-fade-up-4; }
 
   /* Commenting as this is no longer needed in new Hero UI */
@@ -886,32 +899,35 @@
   /* Marquee */
   .org-marquee        { @apply bg-navy-light py-3 overflow-hidden; }
   .org-marquee__track { @apply flex whitespace-nowrap animate-marquee; }
-  .org-marquee__item  { @apply font-sans text-[10px] font-light tracking-[4px] uppercase text-cream px-3; }
+  .org-marquee__item  { @apply font-sans text-[10px] font-normal tracking-[4px] uppercase text-cream px-3; }
   .org-marquee__dot   { @apply opacity-50; }
 
   /* About */
   .org-about {
     @apply grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24
-           px-5 md:px-16 py-20 md:py-32
+           px-5 md:px-16 py-20 md:pt-32 md:pb-16
            bg-white border-b border-gold/15;
   }
-  .org-about__frame {
+
+  /* Commented for image resize purpose */
+  /* .org-about__frame {
     @apply relative bg-cream-mid border border-gold/20 aspect-[4/5]
            order-2 md:order-1 overflow-hidden;
-  }
+  } */
+
   .org-about__frame::before {
     content: '';
     @apply absolute top-4 left-4 -right-4 -bottom-4 border border-gold/15 -z-10;
   }
   .org-about__image {
-    @apply w-full h-full object-cover object-center;
+    @apply w-full h-[90%] object-cover object-center;
   }
   .org-about__content { @apply order-1 md:order-2 flex flex-col justify-center; }
   .org-about__values  { @apply flex flex-col sm:flex-row gap-6 mt-8 pt-6 border-t border-gold/20; }
 
   /* Markets */
   .org-markets {
-    @apply px-5 md:px-16 py-20 md:py-32
+    @apply px-5 md:px-16 py-20 md:py-16
            bg-white border-b border-gold/15;
   }
   .org-markets__header { @apply flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-14; }
@@ -919,7 +935,7 @@
 
   /* Sourcing Services */
   .org-sourcing {
-    @apply px-5 md:px-16 py-20 md:py-32
+    @apply px-5 md:px-16 py-20 md:py-16
            bg-white border-b border-gold/15;
   }
   .org-sourcing__inner     { @apply max-w-6xl mx-auto; }
@@ -1000,8 +1016,8 @@
 
   /* TRADE PROCESS ORGANISM */
   .org-trade {
-    @apply px-5 md:px-16 py-20 md:py-32
-           bg-cream border-b border-gold/15;
+    @apply px-5 md:px-16 py-20 md:py-16
+           bg-white border-b border-gold/15;
   }
   .org-trade__inner  { @apply max-w-6xl mx-auto; }
   .org-trade__header { @apply mb-10 md:mb-12; }
@@ -1014,7 +1030,7 @@
 
   /* SVG diagram wrapper */
   .org-trade__diagram {
-    @apply w-full max-w-[380px] mx-auto;
+    @apply w-full mx-auto;
   }
 
   /* Steps list */
@@ -1032,7 +1048,7 @@
 
   /* Why */
   .org-why {
-    @apply px-5 md:px-16 py-20 md:py-32
+    @apply px-5 md:px-16 py-20 md:py-16
            bg-white border-b border-gold/15;
   }
   .org-why__inner  { @apply max-w-5xl mx-auto; }
@@ -1060,7 +1076,7 @@
     font-size: clamp(22px, 3.5vw, 48px);
   }
   .org-vision__attr {
-    @apply font-sans text-[10px] font-semibold tracking-[4px] text-gold uppercase relative z-10;
+    @apply font-sans text-[14px] font-semibold tracking-[4px] text-gold uppercase relative z-10;
   }
 
   /* Contact */
@@ -1090,7 +1106,7 @@
 
   /* Industries */
   .org-industries {
-    @apply px-5 md:px-16 py-20 md:py-32
+    @apply px-5 md:px-16 py-20 md:py-16
            bg-white border-b border-gold/15;
   }
   .org-industries__header { @apply mb-10 md:mb-12; }
@@ -1109,7 +1125,7 @@
   }
   .org-footer__grid {
     @apply grid gap-10 py-14
-           grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.4fr];
+           grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.4fr];
   }
  
   /* Col 1 — Brand */
@@ -1123,8 +1139,8 @@
   }
   .org-footer__brand-name span { @apply text-cream; }
   .org-footer__tagline {
-    @apply font-content text-[13px] font-light leading-relaxed
-           max-w-[220px];
+    @apply font-content text-[17px] text-justify font-light leading-relaxed
+           max-w-96;
     color: rgba(248,244,236,0.4);
   }
   .org-footer__socials {
@@ -1150,8 +1166,8 @@
     /* color: rgba(248,244,236,0.25); */
   }
   .org-footer__sectors {
-    @apply font-content text-[12px] font-semibold tracking-[2px];
-    color: rgba(248,244,236,0.2);
+    @apply font-content text-[12px] text-muted font-semibold tracking-[2px];
+    /* color: rgba(248,244,236,0.2); */
   }
 
   /* .org-footer {

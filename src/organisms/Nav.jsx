@@ -21,13 +21,13 @@ import { NavLinks } from '../molecules/NavLinks';
 const CONTACT = [
   {
     icon: <Phone size={16} strokeWidth={4} />,
-    label: '+91 00000 00000',
+    label: '+91 7903490796',
     href:  'tel:+910000000000',
   },
   {
     icon: <Mail size={16} strokeWidth={4} />,
-    label: 'contact@chowdhuryglovalventures.com',
-    href:  'mailto:contact@chowdhuryglovalventures.com',
+    label: 'hello@chowdhuryglobal.com',
+    href:  'mailto:hello@chowdhuryglobal.com',
   },
 ];
 
@@ -206,7 +206,7 @@ export function Nav() {
           <div className="org-capsule__nav">
             <Link to="/" className="org-capsule__logo" onClick={closeMenu}>
               <img
-                src="/Logo.png"
+                src="/NewLogo1.png"
                 alt="CGV"
                 className="org-capsule__logo-img"
               />

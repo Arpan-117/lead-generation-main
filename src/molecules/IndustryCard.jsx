@@ -83,7 +83,7 @@ export function IndustryCard({ image, title, desc, solutions }) {
           <path d="M2 4l4 4 4-4" stroke="#B8922E" strokeWidth="1.5"
             strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        {open ? 'Read less' : 'Read more'}
+        {open ? 'Close' : 'View'}
       </button>
     </div>
   );

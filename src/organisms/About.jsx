@@ -12,20 +12,20 @@ export function About() {
   return (
     <section id="about" className="org-about">
       {/* Image frame */}
-      <div className="org-about__frame">
+      {/* <div className="org-about__frame"> */}
          <img
           src="/About.png"
           alt="Chowdhury Global Ventures — our story"
           className="org-about__image"
         />
-      </div>
+      {/* </div> */}
 
       {/* Content */}
       <div className="org-about__content">
         <SectionLabel>Our Story</SectionLabel>
 
         <SectionHeading className="mb-6">
-          A name built on<br /><em>earned respect.</em>
+          A name built on <em>earned respect.</em>
         </SectionHeading>
 
         <BodyText className="mb-4">

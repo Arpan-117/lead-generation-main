@@ -177,7 +177,7 @@ export function TradeProcess() {
         <div className="org-trade__header">
           <SectionLabel>How We Work</SectionLabel>
           <SectionHeading>
-            Simple, transparent<br /><em>trade process.</em>
+            Simple, transparent <em>trade process.</em>
           </SectionHeading>
           <BodyText className="mt-4">
             Getting started with us is straightforward. Every order follows the same
@@ -204,14 +204,15 @@ export function TradeProcess() {
               ))}
             </ol>
 
-            <div className="org-trade__glossary">
+            {/* Commented as does not seem relevant */}
+            {/* <div className="org-trade__glossary">
               {GLOSSARY.map(({ term, def }, i) => (
                 <span key={term}>
                   <strong>{term}</strong> — {def}
                   {i < GLOSSARY.length - 1 && <span> &nbsp;·&nbsp; </span>}
                 </span>
               ))}
-            </div>
+            </div> */}
           </div>
 
         </div>
