@@ -239,7 +239,7 @@ export function Nav() {
       <div className={`org-nav__mobile-menu ${menuOpen ? 'open' : ''}`}>
         <Link to="/" onClick={closeMenu}>
           <img
-            src="/Logo.png"
+            src="/NewLogo1.png"
             alt="Chowdhury Global Ventures"
             className="mol-nav-logo__img--mobile"
           />
