@@ -38,19 +38,24 @@ export function Contact() {
 
         <SectionHeading className="mb-6">
           {/* Begin a<br /><em>partnership.</em> */}
-          Ready to Elevate Your Project? <em>Let’s Connect!</em>
+          {/* Ready to Elevate Your Project? <em>Let’s Connect!</em> */}
+          Looking for the Right Supply Partner? <em>Let’s Connect!</em>
         </SectionHeading>
 
-        <BodyText className="mb-8">
+        {/* <BodyText className="mb-8">
           Whether you’re in the initial planning phase or looking to fine-tune existing details, our dedicated team is here to assist you. Simply complete the form to get in touch with us.
-        </BodyText>
+        </BodyText> */}
 
-        <BodyText className="mb-8">
+        {/* <BodyText className="mb-8">
           Let’s explore how we can collaborate to bring your project to new heights.
-        </BodyText>
+        </BodyText> */}
+
+        {/* <BodyText className="mb-8">
+          We look forward to the opportunity to contribute to the success of your project.
+        </BodyText> */}
 
         <BodyText className="mb-8">
-          We look forward to the opportunity to contribute to the success of your project.
+          Whether you are looking to source products, fulfil a procurement requirement, or source products from India, CGV is ready to understand your requirements and explore the right solution.
         </BodyText>
 
         <div className="flex flex-col gap-4">

@@ -32,11 +32,11 @@ import { StatBlock }     from '../molecules/StatBlock';
  */
 
 const SLIDES = [
-  { src: '/Hero/Hero Sec - 1.png', alt: 'Global trade operations' },
-  { src: '/Hero/Hero Sec - 2.png', alt: 'Industrial supply chain' },
-  { src: '/Hero/Hero Sec - 3.png', alt: 'Shipping and logistics' },
-  { src: '/Hero/Hero Sec - 4.png', alt: 'Manufacturing excellence' },
-  { src: '/Hero/Hero Sec - 5.png', alt: 'Market partnerships' },
+  { src: '/Hero/Hero Sec - 1.webp', alt: 'Global trade operations' },
+  { src: '/Hero/Hero Sec - 2.webp', alt: 'Industrial supply chain' },
+  { src: '/Hero/Hero Sec - 3.webp', alt: 'Shipping and logistics' },
+  { src: '/Hero/Hero Sec - 4.webp', alt: 'Manufacturing excellence' },
+  { src: '/Hero/Hero Sec - 5.webp', alt: 'Market partnerships' },
 ];
 
 const SLIDE_INTERVAL = 5000;
@@ -70,7 +70,7 @@ export function Hero() {
 
         {/* Title — org-hero__title overrides atom-display to cream on dark bg */}
         <h1 className="org-hero__title mb-4 animate-fade-up-2">
-          Trade built on
+          Supply built on
           <em> trust &amp; legacy.</em>
         </h1>
 
@@ -81,8 +81,14 @@ export function Hero() {
         </BodyText> */}
 
         {/* Sub — org-hero__sub overrides atom-body colour for dark bg */}
-        <p className="org-hero__sub">
+        {/* <p className="org-hero__sub">
           A trusted global trading company specializing in international sourcing, procurement, import-export, wholesale supply, and end-to-end supply chain solutions, connecting businesses with quality products and reliable suppliers worldwide.
+        </p> */}
+        <p className="org-hero__sub">
+          An India-based sourcing, procurement and supply partner serving businesses, institutions, government buyers and international markets — connecting requirements with reliable products and trusted supply networks.
+        </p>
+        <p className="org-hero__sub">
+          <strong>Domestic B2B | Government & GeM | Industrial Procurement | Export from India</strong>
         </p>
 
         <div className="org-hero__actions">

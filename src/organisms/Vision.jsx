@@ -5,9 +5,13 @@ export function Vision() {
     <section id="vision" className="org-vision">
       <SectionLabel center>Our Vision</SectionLabel>
 
-      <blockquote className="org-vision__quote">
+      {/* <blockquote className="org-vision__quote">
         "To build one of the most trusted trading enterprises in the world — a legacy
         institution that carries the Chowdhury name with pride across generations."
+      </blockquote> */}
+
+      <blockquote className="org-vision__quote">
+        “To build a trusted and enduring sourcing and supply enterprise — connecting Indian capabilities with businesses and markets worldwide, and creating a legacy that carries the Chowdhury name across generations.”
       </blockquote>
 
       <p className="org-vision__attr">
