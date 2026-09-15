@@ -11,6 +11,7 @@ import { Products } from '../organisms/Products';
 import { Industries } from '../organisms/Industries';
 import { TradeProcess } from '../organisms/TradeProcess';
 import { Mission } from '../organisms/Mission';
+import { SourcigSolutions } from '../organisms/SourcingSolutions';
 
 /**
  * PAGE — HomePage
@@ -34,6 +35,7 @@ export function HomePage() {
       <Marquee />
       <About />
       <Markets />
+      <SourcigSolutions />
       <Industries />
       {/* <Products /> */}
       <SourcingServices />

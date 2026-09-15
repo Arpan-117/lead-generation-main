@@ -25,21 +25,15 @@ const MARKETS = [
   },
 ];
 
-export function Markets() {
+export function SourcigSolutions() {
   return (
     <section id="markets" className="org-markets">
       <div className="org-markets__header">
         <div>
-          <SectionLabel>Our Reach</SectionLabel>
-          {/* <SectionHeading>
-            Global Markets. <em>Trusted Partnerships.</em>
-          </SectionHeading> */}
+          <SectionLabel>Sourcing Solutions</SectionLabel>
           <SectionHeading>
             India to the World, <em>Built on Trust.</em>
           </SectionHeading>
-          {/* <BodyText className="mt-4 ">
-            Wherever your business operates, CGV delivers reliable sourcing, procurement, and trading solutions through a trusted global network.
-          </BodyText> */}
           <BodyText className="mt-4 ">
             From domestic procurement to international sourcing, CGV connects businesses with reliable suppliers, products and supply solutions — built around long-term partnerships and dependable delivery.
           </BodyText>
