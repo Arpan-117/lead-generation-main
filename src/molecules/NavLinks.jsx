@@ -9,7 +9,7 @@ import { NavLink, useLocation } from "react-router";
 const LINKS = [
   { href: '/#about', label: 'About' },
   // { href: '/#markets', label: 'Markets' },
-  { href: '/#markets', label: 'Sourcing Solutions' },
+  { href: '/#sourcing-solutions', label: 'Sourcing Solutions' },
   { href: '/#industries', label: 'Industries' },   // Build and map
   // { href: '/#products', label: 'Products' },     // Build and map
   { href: '/#sourcing', label: 'Sourcing Services' },

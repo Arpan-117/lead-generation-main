@@ -462,6 +462,90 @@
            text-navy leading-[1.4];
   } */
 
+  /* Solution Card molecule */
+  .mol-solution-card {
+    @apply relative flex flex-col
+           bg-white border border-gold/15
+           p-8 md:p-10
+           transition-all duration-300
+           hover:border-gold/40;
+  }
+  .mol-solution-card--wide {
+    @apply lg:col-span-2;
+  }
+
+  /* Watermark index number, e.g. 01 */
+  .mol-solution-card__index {
+    @apply absolute top-6 right-7 md:top-7 md:right-9
+           font-serif text-[44px] md:text-[64px] font-light leading-none
+           text-gold select-none pointer-events-none;
+  }
+
+  .mol-solution-card__title {
+    @apply relative z-10 font-serif text-[22px] md:text-[26px] font-medium
+           text-navy leading-[1.2] mb-4 pr-14 md:pr-16;
+  }
+
+  /* Intro paragraph — always visible */
+  .mol-solution-card__intro {
+    @apply atom-body relative z-10 mb-0;
+  }
+
+  /* Expandable region — secondary paragraph, list and closing line */
+  .mol-solution-card__expandable {
+    @apply relative z-10 overflow-hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+  }
+  .mol-solution-card__expandable.open {
+    max-height: 1200px;
+  }
+  .mol-solution-card__expandable-inner {
+    @apply flex flex-col gap-5 pt-5 mt-5 border-t border-gold/15;
+  }
+
+  .mol-solution-card__secondary {
+    @apply atom-body;
+  }
+
+  .mol-solution-card__list {
+    @apply flex flex-col gap-2;
+  }
+  /* Splits the list into two columns on wider cards, e.g. the OEM card */
+  .mol-solution-card__list--split {
+    @apply sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-2;
+  }
+  .mol-solution-card__list-item {
+    @apply font-content text-[17px] text-muted leading-[1.6]
+           flex gap-3 items-baseline;
+  }
+  .mol-solution-card__list-item::before {
+    content: '→';
+    @apply text-gold flex-shrink-0 text-[13px];
+  }
+
+  .mol-solution-card__closing {
+    @apply font-content text-[15px] font-light text-muted italic leading-[1.7]
+           pt-4 border-t border-gold/10;
+  }
+
+  /* Toggle — circular icon button + label, distinct from the Service/Industry toggles */
+  .mol-solution-card__toggle {
+    @apply relative z-10 flex items-center gap-3 self-start mt-6
+           font-sans text-[13px] font-semibold tracking-[3px] text-gold uppercase
+           bg-transparent border-0 cursor-pointer
+           transition-all duration-300
+           hover:gap-4 hover:text-navy;
+  }
+  .mol-solution-card__toggle-icon {
+    @apply flex items-center justify-center w-7 h-7 flex-shrink-0
+           border border-gold rounded-full text-gold
+           transition-all duration-300;
+  }
+  .mol-solution-card__toggle.open .mol-solution-card__toggle-icon {
+    @apply rotate-45 bg-gold text-white;
+  }
+
   /* Trade Step molecule */
   .mol-trade-step {
     @apply grid gap-4 py-5 border-b border-gold/15;
@@ -886,6 +970,7 @@
   .org-hero__eyebrow  { @apply atom-eyebrow justify-center mb-8 animate-fade-up-1; }
   .org-hero__title    { @apply atom-display text-center mb-4 animate-fade-up-2 text-navy; }
   .org-hero__sub      { @apply atom-body text-justify mb-10 animate-fade-up-3 text-muted; }
+  .org-hero__sub2      { @apply atom-body text-center mb-10 animate-fade-up-3 text-navy-light; }
   .org-hero__actions  { @apply flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-center animate-fade-up-4; }
 
   /* Commenting as this is no longer needed in new Hero UI */
@@ -944,6 +1029,17 @@
   .org-sourcing__reason-grid {
     @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
            gap-px bg-gold/15 mt-10;
+  }
+
+  /* Sourcing Solutions */
+  .org-sourcing-solutions {
+    @apply px-5 md:px-16 py-20 md:py-16
+           bg-cream-mid border-b border-gold/15;
+  }
+  .org-sourcing-solutions__inner  { @apply max-w-6xl mx-auto; }
+  .org-sourcing-solutions__header { @apply mb-12 md:mb-16 max-w-3xl; }
+  .org-sourcing-solutions__grid   {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8;
   }
 
   /* Workflow snake — desktop: 2 rows of 3 with connecting arrows */

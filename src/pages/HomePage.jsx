@@ -2,7 +2,7 @@ import { HomeTemplate }  from '../templates/HomeTemplate';
 import { Hero }          from '../organisms/Hero';
 import { Marquee }       from '../organisms/Marquee';
 import { About }         from '../organisms/About';
-import { Markets }       from '../organisms/Markets';
+// import { Markets }       from '../organisms/Markets';
 import { Why }           from '../organisms/Why';
 import { Vision }        from '../organisms/Vision';
 import { Contact }       from '../organisms/Contact';
@@ -11,7 +11,8 @@ import { Products } from '../organisms/Products';
 import { Industries } from '../organisms/Industries';
 import { TradeProcess } from '../organisms/TradeProcess';
 import { Mission } from '../organisms/Mission';
-import { SourcigSolutions } from '../organisms/SourcingSolutions';
+import SourcingSolutions from '../organisms/SourcingSolutions';
+
 
 /**
  * PAGE — HomePage
@@ -34,8 +35,8 @@ export function HomePage() {
       <Hero />
       <Marquee />
       <About />
-      <Markets />
-      <SourcigSolutions />
+      {/* <Markets /> */}
+      <SourcingSolutions />
       <Industries />
       {/* <Products /> */}
       <SourcingServices />

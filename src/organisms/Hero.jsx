@@ -87,7 +87,7 @@ export function Hero() {
         <p className="org-hero__sub">
           An India-based sourcing, procurement and supply partner serving businesses, institutions, government buyers and international markets — connecting requirements with reliable products and trusted supply networks.
         </p>
-        <p className="org-hero__sub">
+        <p className="org-hero__sub2">
           <strong>Domestic B2B | Government & GeM | Industrial Procurement | Export from India</strong>
         </p>
 
