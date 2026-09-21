@@ -12,7 +12,7 @@ const LINKS = [
   { href: '/#sourcing-solutions', label: 'Sourcing Solutions' },
   { href: '/#industries', label: 'Industries' },   // Build and map
   // { href: '/#products', label: 'Products' },     // Build and map
-  { href: '/#sourcing', label: 'Sourcing Services' },
+  // { href: '/#sourcing', label: 'Sourcing Services' },
   { href: '/#trade-process', label: 'How We Work' },
   { href: '/#why', label: 'Why CGV' },
   { href: '/#contact', label: 'Get in Touch' },
