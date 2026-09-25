@@ -128,7 +128,7 @@ export function SourcingSolutions()
     <section id="sourcing-solutions" className="org-sourcing-solutions">
       <div className="org-sourcing-solutions__inner">
         <div className="org-sourcing-solutions__header">
-          <div className="atom-section-label">Sourcing Solution</div>
+          <div className="atom-section-label">Sourcing Solutions</div>
           <h2 className="atom-heading">
             India to the World. <em>Built on Trust.</em>
           </h2>

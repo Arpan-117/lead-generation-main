@@ -29,11 +29,11 @@ const PILLARS = [
     // desc:   'We are building a generational enterprise. Partners who join us now are part of a journey — not just a deal.',
     desc:   "Our role doesn't end with finding a product. We coordinate the journey from sourcing and commercial evaluation through documentation, logistics and delivery.",
   },
-  {
-    number: '05',
-    name:   '',
-    desc:   "",
-  },
+  // {
+  //   number: '05',
+  //   name:   '',
+  //   desc:   "",
+  // },
   {
     number: '06',
     name:   'India at the Centre. Markets Beyond.',
@@ -44,11 +44,11 @@ const PILLARS = [
     name:   "Long-Term View",
     desc:   "We are building CGV for the long term. That means choosing sustainable relationships over short-term transactions and becoming a procurement partner our customers can rely on repeatedly.",
   },
-  {
-    number: '08',
-    name:   '',
-    desc:   "",
-  },
+  // {
+  //   number: '08',
+  //   name:   '',
+  //   desc:   "",
+  // },
 ];
 
 export function Why() {
@@ -60,7 +60,7 @@ export function Why() {
           What sets us <em>apart.</em>
         </SectionHeading>
         <BodyText className="mt-4">
-          More than a supplier. A partner behind your supply chain.
+          More than a supplier. A partner behind your supply chain. We don't just move products from one place to another.  We build the sourcing relationships, supply networks and procurement capabilities that keep businesses moving.
         </BodyText>
 
         <div className="org-why__grid">
@@ -74,9 +74,9 @@ export function Why() {
           We don't just supply products — we build long-term supply relationships that keep
           your operations running without interruption, anywhere in the world.
         </BodyText> */}
-        <BodyText className="org-why__closing">
+        {/* <BodyText className="org-why__closing">
           We don't just move products from one place to another.  We build the sourcing relationships, supply networks and procurement capabilities that keep businesses moving.
-        </BodyText>
+        </BodyText> */}
       </div>
     </section>
   );

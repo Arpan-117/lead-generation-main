@@ -69,10 +69,10 @@
   /* } */
 
   .atom-pillar-name {
-    @apply font-sans text-[14px] font-semibold tracking-[3px] text-gold uppercase mb-3;
+    @apply font-sans text-[14px] font-semibold tracking-[3px] text-gold text-center uppercase mb-3;
   }
   .atom-pillar-desc {
-    @apply font-content text-[17px] text-muted italic leading-[1.7];
+    @apply font-content text-[17px] text-muted text-center italic leading-[1.7];
   }
 
   /* Buttons */
@@ -576,8 +576,8 @@
   .mol-footer-link {
     @apply font-sans text-[17px] font-light tracking-[2px]
            no-underline transition-colors duration-300
-           hover:text-gold;
-    color: rgba(248,244,236,0.45);
+           text-white hover:text-gold;
+    /* color: rgba(248,244,236,0.45); */
   }
  
   /* Contact rows */
@@ -1037,7 +1037,7 @@
            bg-cream-mid border-b border-gold/15;
   }
   .org-sourcing-solutions__inner  { @apply max-w-6xl mx-auto; }
-  .org-sourcing-solutions__header { @apply mb-12 md:mb-16 max-w-3xl; }
+  .org-sourcing-solutions__header { @apply mb-12 md:mb-16; }
   .org-sourcing-solutions__grid   {
     @apply grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8;
   }
@@ -1148,7 +1148,7 @@
            bg-white border-b border-gold/15;
   }
   .org-why__inner  { @apply max-w-5xl mx-auto; }
-  .org-why__grid   { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mt-12; }
+  .org-why__grid   { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mt-12; }
   .org-why__pillar { @apply border-t border-gold/30 pt-6; }
   .org-why__closing { @apply mt-12 pt-8 border-t border-gold/20; }
 
@@ -1231,24 +1231,24 @@
            hover:opacity-90 transition-opacity duration-300;
   }
   .org-footer__logo {
-    @apply h-12 w-auto object-contain;
+    @apply h-12 w-auto object-contain bg-cream-dark border-[3px] rounded border-gold;
   }
   .org-footer__brand-name span { @apply text-cream; }
   .org-footer__tagline {
-    @apply font-content text-[17px] text-justify font-light leading-relaxed
+    @apply font-content text-[17px] text-gold text-justify font-light leading-relaxed
            max-w-96;
-    color: rgba(248,244,236,0.4);
+    /* color: rgba(248,244,236,0.4); */
   }
   .org-footer__socials {
     @apply mt-6 flex items-center gap-2;
   }
   .org-footer__social-btn {
-    @apply flex h-8 w-8 items-center justify-center
-           border border-white/10 rounded-full
+    @apply flex h-10 w-10 items-center justify-center text-white
+           border border-white rounded-full
            transition-all duration-300
            hover:border-gold hover:text-gold
            no-underline;
-    color: rgba(248,244,236,0.35);
+    /* color: rgba(248,244,236,0.35); */
   }
 
   /* Bottom bar */

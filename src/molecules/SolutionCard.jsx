@@ -35,9 +35,9 @@ const SolutionCard = ({
     <article
       className={`mol-solution-card${wide ? ' mol-solution-card--wide' : ''}`}
     >
-      <span className="mol-solution-card__index" aria-hidden="true">
+      {/* <span className="mol-solution-card__index" aria-hidden="true">
         {String(index).padStart(2, '0')}
-      </span>
+      </span> */}
 
       <h3 className="mol-solution-card__title">{title}</h3>
       <p className="mol-solution-card__intro">{intro}</p>
