@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { SectionLabel, SectionHeading, BodyText } from '../atoms/Typography';
 import { ButtonPrimary } from '../atoms/Button';
 import { FormField } from '../atoms/FormField';
+import { Link } from 'react-router';
+import { ArrowRight } from 'lucide-react';
 
 const DETAILS = [
-  { key: 'Email',   val: 'hello@chowdhuryglobal.com' },
+  { key: 'Email', val: 'hello@chowdhuryglobal.com' },
   { key: 'Based in', val: 'India' },
   // { key: 'Markets', val: 'India · Middle East · Africa' },
   { key: 'Headquarters', val: 'Jamshedpur, Jharkhand' },
@@ -13,9 +15,9 @@ const DETAILS = [
 const EMPTY = { name: '', company: '', email: '', message: '' };
 
 export function Contact() {
-  const [form, setForm]           = useState(EMPTY);
+  const [form, setForm] = useState(EMPTY);
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading]     = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -118,8 +120,20 @@ export function Contact() {
       </div> */}
 
       {/* Right — Google form */}
-      <div className='pt-4 px-4'>
+      {/* <div className='pt-4 px-4'>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfxV2Hb2NcBOiqV7fpQTECOICnrdbpNAWLpm_VplrisD9qPGw/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div> */}
+
+      {/* Right — contact paths */}
+      <div className="org-contact__actions">
+        <Link to="/contact/requirement" className="atom-btn-primary org-contact__cta">
+          Contact for Product Requirement
+          <ArrowRight size={16} />
+        </Link>
+        <Link to="/contact/supplier" className="atom-btn-outline org-contact__cta">
+          Contact as a Supplier
+          <ArrowRight size={16} />
+        </Link>
       </div>
     </section>
   );

@@ -5,6 +5,10 @@ const HomePage = lazy(() =>
   import('./pages/HomePage').then((m) => ({ default: m.HomePage }))
 );
 
+const RequirementPage = lazy(() => 
+  import('./pages/RequirementPage')
+)  
+
 function PageLoader() {
   return (
     <div className="min-h-screen bg-cream flex items-center justify-center">
@@ -33,4 +37,19 @@ export const router = createBrowserRouter([
   //     </Suspense>
   //   ),
   // },
+  {
+    path: '/contact/requirement',
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <RequirementPage />
+      </Suspense>
+    ),
+  },
+//   {
+//   path: '/contact/requirement',
+//   lazy: async () => {
+//     const { RequirementPage } = await import('../pages/RequirementPage');
+//     return { Component: RequirementPage };
+//   },
+// },
 ]);
