@@ -7,7 +7,11 @@ const HomePage = lazy(() =>
 
 const RequirementPage = lazy(() => 
   import('./pages/RequirementPage')
-)  
+);
+
+const SupplierPage = lazy(() => 
+  import('./pages/SupplierPage')
+);
 
 function PageLoader() {
   return (
@@ -42,6 +46,14 @@ export const router = createBrowserRouter([
     element: (
       <Suspense fallback={<PageLoader />}>
         <RequirementPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: '/contact/supplier',
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <SupplierPage />
       </Suspense>
     ),
   },

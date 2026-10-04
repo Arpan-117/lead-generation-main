@@ -8,6 +8,7 @@ import { LocationField } from '../molecules/LocationField';
 import { FileUploadField } from '../molecules/FieldUploadField';
 import { Toast } from '../molecules/Toast';
 import { submitEnquiry } from '../lib/submitEnquiry';
+import { BackLink } from '../molecules/BackLink';
 
 const ENQUIRY_TYPES = [
   'Domestic B2B Supply',
@@ -114,6 +115,7 @@ export function RequirementForm() {
 
   return (
     <section className="org-requirement">
+      <BackLink className="mb-10" />
       <div className="org-requirement__inner">
         <header className="org-requirement__header">
           <SectionLabel>Product Enquiry</SectionLabel>

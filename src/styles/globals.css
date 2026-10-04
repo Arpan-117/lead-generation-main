@@ -340,6 +340,15 @@
            transition-colors duration-300 hover:text-navy;
   }
 
+    /* Back link */
+  .mol-back-link {
+    @apply inline-flex items-center gap-2 font-sans text-[11px] font-semibold
+           tracking-[3px] uppercase text-navy no-underline
+           transition-colors duration-300 hover:text-gold;
+  }
+  .mol-back-link svg { @apply transition-transform duration-300; }
+  .mol-back-link:hover svg { @apply -translate-x-1 motion-reduce:translate-x-0; }
+
   /* Product Card molecule */
   .mol-product-card {
     @apply bg-cream-mid border border-gold/15 flex flex-col
